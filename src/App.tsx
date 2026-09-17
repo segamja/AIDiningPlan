@@ -5,6 +5,9 @@ type Chip = {
   active?: boolean
 }
 
+const APP_VERSION = '1.0.0'
+const VERSION_STORAGE_KEY = 'ai-dining-plan-version'
+
 const initialPeople = ['혼자', '연인', '친구', '가족']
 const initialIntent = ['식사', '카페', '술', '산책']
 const initialConditions = ['가까운 곳', '가성비', '주차', '조용한 곳']
@@ -29,6 +32,45 @@ function App() {
   const [budget, setBudget] = React.useState<string>('7만원 이내')
   const [isLoading, setIsLoading] = React.useState(false)
   const [plan, setPlan] = React.useState(defaultPlan)
+  const [currentVersion, setCurrentVersion] = React.useState(APP_VERSION)
+  const [versionUpdateMessage, setVersionUpdateMessage] = React.useState('')
+
+  React.useEffect(() => {
+    const syncVersion = async () => {
+      try {
+        const response = await fetch('/api/version')
+        if (!response.ok) {
+          throw new Error('버전 정보를 확인할 수 없습니다.')
+        }
+
+        const data = await response.json()
+        const serverVersion = data?.version || APP_VERSION
+        const savedVersion = localStorage.getItem(VERSION_STORAGE_KEY)
+
+        setCurrentVersion(serverVersion)
+
+        if (savedVersion && savedVersion !== serverVersion) {
+          setVersionUpdateMessage(`업데이트 완료: v${savedVersion} → v${serverVersion}`)
+          localStorage.setItem(VERSION_STORAGE_KEY, serverVersion)
+          window.setTimeout(() => {
+            window.location.reload()
+          }, 1200)
+          return
+        }
+
+        if (!savedVersion) {
+          localStorage.setItem(VERSION_STORAGE_KEY, serverVersion)
+        }
+      } catch {
+        const savedVersion = localStorage.getItem(VERSION_STORAGE_KEY)
+        if (savedVersion) {
+          setCurrentVersion(savedVersion)
+        }
+      }
+    }
+
+    syncVersion()
+  }, [])
 
   const toggleValue = (value: string, list: string[], setter: React.Dispatch<React.SetStateAction<string[]>>) => {
     setter((current) => {
@@ -110,10 +152,17 @@ function App() {
           <span>청라호수공원</span>
         </div>
         <div className="topbar-icons">
+          <span className="version-pill">v{currentVersion}</span>
           <button className="icon-button">🔔</button>
           <button className="icon-button user">👤</button>
         </div>
       </header>
+
+      {versionUpdateMessage && (
+        <div className="version-banner">
+          {versionUpdateMessage}
+        </div>
+      )}
 
       <main className="main-layout">
         <aside className="sidebar">

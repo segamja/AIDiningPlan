@@ -1,17 +1,3 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from 'dotenv'
-import { readFileSync } from 'node:fs'
-
-dotenv.config()
-
-const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'))
-const app = express()
-const port = Number(process.env.PORT || 3001)
-
-app.use(cors())
-app.use(express.json())
-
 const defaultPlan = {
   title: '청라 로맨틱 디너 & 캔들라이트 카페 데이트',
   score: 94,
@@ -77,20 +63,22 @@ async function fetchKakaoPlaces() {
   const kakaoKey = process.env.KAKAO_REST_API_KEY
   if (!kakaoKey) return []
 
-  const url = 'https://dapi.kakao.com/v2/local/search/keyword.json?query=청라%20맛집&category_group_code=FD6&radius=2000&sort=distance'
+  try {
+    const response = await fetch('https://dapi.kakao.com/v2/local/search/keyword.json?query=청라%20맛집&category_group_code=FD6&radius=2000&sort=distance', {
+      headers: {
+        Authorization: `KakaoAK ${kakaoKey}`
+      }
+    })
 
-  const response = await fetch(url, {
-    headers: {
-      Authorization: `KakaoAK ${kakaoKey}`
+    if (!response.ok) {
+      return []
     }
-  })
 
-  if (!response.ok) {
-    throw new Error('Kakao API request failed')
+    const data = await response.json()
+    return Array.isArray(data.documents) ? data.documents.slice(0, 5) : []
+  } catch {
+    return []
   }
-
-  const data = await response.json()
-  return Array.isArray(data.documents) ? data.documents.slice(0, 5) : []
 }
 
 async function fetchOpenAIRecommendation(payload) {
@@ -107,35 +95,32 @@ async function fetchOpenAIRecommendation(payload) {
     JSON schema: { title: string, score: number, totalTime: string, walk: string, stages: [{name, rating, time, place, distance, tag}, ...] }
   `
 
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`
-    },
-    body: JSON.stringify({
-      model: 'gpt-4o-mini',
-      temperature: 0.7,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        {
-          role: 'user',
-          content: JSON.stringify(payload)
-        }
-      ],
-      response_format: { type: 'json_object' }
-    })
-  })
-
-  if (!response.ok) {
-    return buildDemoPlan(payload)
-  }
-
-  const result = await response.json()
-  const raw = result?.choices?.[0]?.message?.content
-  if (!raw) return buildDemoPlan(payload)
-
   try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${apiKey}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-4o-mini',
+        temperature: 0.7,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: JSON.stringify(payload) }
+        ],
+        response_format: { type: 'json_object' }
+      })
+    })
+
+    if (!response.ok) {
+      return buildDemoPlan(payload)
+    }
+
+    const result = await response.json()
+    const raw = result?.choices?.[0]?.message?.content
+    if (!raw) return buildDemoPlan(payload)
+
     const parsed = JSON.parse(raw)
     return {
       title: parsed.title || defaultPlan.title,
@@ -149,37 +134,22 @@ async function fetchOpenAIRecommendation(payload) {
   }
 }
 
-app.get('/api/version', (_req, res) => {
-  res.json({
-    version: pkg.version,
-    name: pkg.name
-  })
-})
-
-app.get('/api/health', (_req, res) => {
-  res.json({
-    ok: true,
-    mode: process.env.OPENAI_API_KEY && process.env.KAKAO_REST_API_KEY ? 'live' : 'demo',
-    version: pkg.version
-  })
-})
-
-app.post('/api/recommend', async (req, res) => {
-  try {
-    const payload = req.body || {}
-    const places = await fetchKakaoPlaces()
-
-    const result = await fetchOpenAIRecommendation({
-      ...payload,
-      placeCandidates: places
-    })
-
-    res.json(result)
-  } catch (error) {
-    res.json(buildDemoPlan(req.body || {}))
+export default async function handler(req, res) {
+  if (req.method === 'OPTIONS') {
+    res.setHeader('Access-Control-Allow-Origin', '*')
+    res.setHeader('Access-Control-Allow-Methods', 'GET,POST,OPTIONS')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type')
+    return res.status(204).end()
   }
-})
 
-app.listen(port, () => {
-  console.log(`AI Dining Plan server running on http://localhost:${port}`)
-})
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' })
+  }
+
+  const payload = typeof req.body === 'string' ? JSON.parse(req.body) : (req.body || {})
+  const places = await fetchKakaoPlaces()
+  const result = await fetchOpenAIRecommendation({ ...payload, placeCandidates: places })
+
+  res.setHeader('Access-Control-Allow-Origin', '*')
+  return res.status(200).json(result)
+}
