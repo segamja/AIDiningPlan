@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "text-muted": "#6B6661",
+          "border-subtle": "#E8E3DD",
+          "surface-container": "#f7ece6",
+          "on-surface": "#201b18",
+          "on-secondary-container": "#783d01",
+          "on-tertiary": "#ffffff",
+          "background": "#fff8f5",
+          "surface-container-low": "#fdf1ec",
+          "tertiary-fixed": "#8cf5e4",
+          "on-tertiary-container": "#00322c",
+          "secondary-container": "#ffab69",
+          "inverse-primary": "#ffb4a2",
+          "inverse-on-surface": "#faeee9",
+          "surface-container-high": "#f1e6e1",
+          "primary-container": "#e76f51",
+          "surface-container-highest": "#ebe0db",
+          "secondary-fixed-dim": "#ffb780",
+          "on-primary": "#ffffff",
+          "on-tertiary-fixed-variant": "#005048",
+          "outline": "#8a716c",
+          "on-secondary": "#ffffff",
+          "error": "#ba1a1a",
+          "outline-variant": "#dec0b9",
+          "inverse-surface": "#352f2c",
+          "surface-container-lowest": "#ffffff",
+          "surface": "#fff8f5",
+          "on-tertiary-fixed": "#00201c",
+          "primary-fixed-dim": "#ffb4a2",
+          "on-secondary-fixed-variant": "#6f3800",
+          "on-primary-fixed": "#3c0700",
+          "secondary": "#8e4e14",
+          "on-secondary-fixed": "#2f1400",
+          "on-error-container": "#93000a",
+          "tertiary-fixed-dim": "#6fd8c8",
+          "surface-dim": "#e3d8d3",
+          "surface-bright": "#fff8f5",
+          "primary-fixed": "#ffdad2",
+          "tertiary": "#006a60",
+          "error-container": "#ffdad6",
+          "surface-variant": "#ebe0db",
+          "on-primary-container": "#590f00",
+          "background-sand": "#FBF9F6",
+          "tertiary-container": "#33a395",
+          "on-background": "#201b18",
+          "on-error": "#ffffff",
+          "secondary-fixed": "#ffdcc4",
+          "on-surface-variant": "#57423d",
+          "surface-white": "#FFFFFF",
+          "on-primary-fixed-variant": "#83260e",
+          "primary": "#a33d23",
+          "warning-amber": "#E9C46A",
+          "surface-tint": "#a33d23"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem",
+          "space-xl": "2rem",
+          "margin": "1.5rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "15px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "13px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-background-sand font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-white/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md flex-shrink-0"><img alt="AI Dining Plan Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VsjQ_Qdq2Xw-dtyhfg-pbd88WQdHwgL3vH2IItO6pQzNBpncrx7EURTZxPPRKkYt6tjf9vm1cul3OfkZTvD5VLmIdpG4VxskGrfIoPYnekTshVKeHB-hhq4_fHKINCTupBqyzjyZX6G1UN2PnUkXSVynf3ZNavekz166CCWL4n555AjPEV068vszaKO8ht8Luv1IeNxZTv1eCpSZPOVaBRsenBqbySypisZwANyRC6W057alNpV5k3I5E"/><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">AI Dining Plan</span><span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm">Beta</span></div><div class="hidden lg:flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm"><span class="text-xs">📍</span><span>인천 청라호수공원 주변</span></div></div><nav class="hidden md:flex items-center gap-space-lg" data-active-classes="text-primary font-headline-sm"><a aria-current="page" class="transition-colors text-primary font-headline-sm" data-path="ai-dining-plan" href="#">다이닝 플래너</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="saved-plans" href="#">저장된 플랜</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="curated-spots" href="#">에디터 추천 코스</a></nav><div class="flex items-center gap-space-sm flex-shrink-0"><a class="hidden sm:inline-flex items-center px-4 py-2 rounded-xl bg-surface-white text-on-surface font-label-md text-label-md shadow-[0_1px_4px_rgba(0,0,0,0.05)] hover:bg-surface-container-low hover:text-on-surface transition-all" data-path="saved-plans" href="#">저장된 플랜</a><a class="inline-flex items-center px-4 py-2 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md shadow-[0_4px_16px_-2px_rgba(231,111,81,0.25)] hover:bg-primary hover:text-on-primary transition-all" data-path="ai-dining-plan" href="#">새 계획 만들기</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-background-sand min-h-screen flex flex-col"><div class="flex flex-col w-full">
+<div class="w-full flex flex-col lg:flex-row min-h-[calc(100vh-4rem)]">
+<!-- Left Panel: Scrollable Planner & Timeline Canvas (Fixed 520px on Desktop) -->
+<aside class="w-full lg:w-[530px] lg:flex-shrink-0 flex flex-col bg-background-sand px-space-md sm:px-space-lg py-space-lg lg:overflow-y-auto lg:h-[calc(100vh-4rem)]">
+<!-- Conversational Input Bento Card -->
+<section class="bg-surface-white rounded-2xl p-space-lg shadow-sm mb-space-lg transition-all duration-300">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-7 h-7 rounded-full bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]">auto_awesome</span>
+</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">식사 코스 플래너</span>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container animate-pulse"></span>
+            Kakao API 동기화
+          </span>
+</div>
+<p class="font-body-md text-text-muted mb-space-md">오늘 뭐 먹을지 고민 마세요. 대화하듯 편하게 알려주시면 AI가 이동 동선까지 계산해드려요.</p>
+<!-- Rich Prompt Input -->
+<div class="relative bg-surface-container-low rounded-xl p-space-md mb-space-md">
+<label class="sr-only" for="ai-prompt-input">사용자 요청사항</label>
+<textarea class="w-full bg-transparent resize-none font-body-lg text-body-lg text-on-surface placeholder:text-text-muted focus:outline-none" id="ai-prompt-input" placeholder="어떤 식사 일정을 찾으시나요?" rows="3">아내와 청라에서 데이트하려고 해. 저녁은 조용하게 먹고 감성 카페에서 대화하고 싶어. 예산은 7만원 안팎.</textarea>
+<div class="flex items-center justify-between mt-2 pt-2 text-text-muted">
+<span class="font-label-sm text-label-sm text-text-muted/80">실시간 청라호수공원 반경 2km 기준</span>
+<button class="text-primary hover:text-on-primary-container font-label-sm text-label-sm flex items-center gap-0.5 transition-colors" onclick="document.getElementById('ai-prompt-input').value=''" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span> 초기화
+            </button>
+</div>
+</div>
+<!-- Attribute Filter Chips Matrix -->
+<div class="space-y-space-sm mb-space-lg">
+<!-- 누구와 -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-text-muted w-12 flex-shrink-0">누구와</span>
+<button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm transition-transform active:scale-95 shadow-sm" type="button">연인 💕</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">친구</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">가족</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">혼자</button>
+</div>
+<!-- 코스 구성 -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-text-muted w-12 flex-shrink-0">코스</span>
+<button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm transition-transform active:scale-95 shadow-sm" type="button">식사 + 카페 ☕</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">식사만</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">가벼운 술</button>
+</div>
+<!-- 분위기 & 선호 조건 -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-text-muted w-12 flex-shrink-0">조건</span>
+<button class="px-3 py-1 rounded-full bg-on-surface text-surface-white font-label-sm text-label-sm transition-transform active:scale-95" type="button">조용한 곳 🤫</button>
+<button class="px-3 py-1 rounded-full bg-on-surface text-surface-white font-label-sm text-label-sm transition-transform active:scale-95" type="button">분위기 좋은 ✨</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">가성비</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">주차 가능</button>
+</div>
+<!-- 예산 규모 -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+<span class="font-label-sm text-label-sm text-text-muted w-12 flex-shrink-0">예산</span>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">4만원 이하</button>
+<button class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm transition-transform active:scale-95 shadow-sm" type="button">7만원 안팎</button>
+<button class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest font-label-sm text-label-sm transition-colors" type="button">10만원 이상</button>
+</div>
+</div>
+<!-- Location Status & Plan Trigger -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-space-sm pt-space-sm">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary material-symbols-outlined text-[16px]">my_location</span>
+<span>청라호수공원 반경 2km 이내</span>
+</div>
+<button class="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-primary-container text-on-primary font-headline-sm text-body-lg shadow-[0_4px_16px_rgba(231,111,81,0.3)] hover:bg-primary active:scale-[0.98] transition-all" id="plan-regenerate-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">magic_button</span>
+<span>AI 식사 계획 만들기</span>
+</button>
+</div>
+</section>
+<!-- Progressive AI Status Check Indicator -->
+<section class="bg-surface-container-low rounded-2xl p-space-md mb-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-sm cursor-pointer" onclick="document.getElementById('status-drawer').classList.toggle('hidden')">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+<span class="font-label-md text-label-md text-on-surface">AI 실시간 추론 &amp; 로컬 데이터 파이프라인</span>
+</div>
+<span class="text-xs text-text-muted flex items-center font-label-sm">4단계 완료 <span class="material-symbols-outlined text-[16px]">expand_more</span></span>
+</div>
+<div class="space-y-2 pt-1" id="status-drawer">
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="text-on-surface">데이트 · 2인 · 7만원대 선호 조건 파악 완료</span>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="text-on-surface">Kakao Local API 반경 2km 맛집 14곳 수집 및 필터링</span>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="text-on-surface">분위기 &amp; 대화 최적화 프라이빗 좌석 키워드 매칭 분석</span>
+</div>
+<div class="flex items-center gap-2 text-tertiary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span class="text-on-surface">식사 후 도보 4분 거리 로스터리 감성 카페 최적 매칭</span>
+</div>
+</div>
+</section>
+<!-- Bento Plan Summary Header -->
+<section class="bg-surface-white rounded-2xl p-space-lg shadow-sm mb-space-lg">
+<div class="flex items-start justify-between gap-space-sm mb-3">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container/30 text-on-secondary-container font-label-sm text-label-sm font-semibold">오늘의 추천 여정 #01</span>
+<span class="text-text-muted font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span> 18:30 ~ 21:00
+          </span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-space-md">청라 로맨틱 디너 &amp; 캔들라이트 카페 데이트</h2>
+<!-- Bento Metrics Grid -->
+<div class="grid grid-cols-3 gap-2">
+<div class="bg-surface-container-low rounded-xl p-3 text-center">
+<span class="block font-label-sm text-label-sm text-text-muted mb-0.5">총 소요</span>
+<span class="font-headline-sm text-body-lg text-primary font-bold">약 2.5시간</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 text-center">
+<span class="block font-label-sm text-label-sm text-text-muted mb-0.5">코스 간 이동</span>
+<span class="font-headline-sm text-body-lg text-tertiary font-bold">도보 4분(280m)</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 text-center">
+<span class="block font-label-sm text-label-sm text-text-muted mb-0.5">예산 적합도</span>
+<span class="font-headline-sm text-body-lg text-on-secondary-container font-bold">96% (6.8만)</span>
+</div>
+</div>
+</section>
+<!-- Timeline Vertical Journey Section -->
+<section class="space-y-0 relative mb-space-lg">
+<!-- Step 01: Dinner Card -->
+<div class="relative pl-8 pb-8 group" id="step-dinner-card">
+<!-- Timeline Vertical Node & Line -->
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm font-bold shadow-md z-10">
+            1
+          </div>
+<div class="absolute left-[11px] top-7 bottom-0 w-[2px] bg-secondary-container/40"></div>
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer" onclick="focusLocation('dinner')">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+                01 저녁 식사 · 18:30
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">이탈리안 비스트로</span>
+</div>
+<div class="flex gap-space-md items-start mb-space-md">
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate">청라 비스트로 무드</h3>
+<p class="font-body-md text-text-muted text-xs mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+                  현재 위치에서 650m · 서구 청라커낼로 260번길
+                </p>
+</div>
+<img class="w-16 h-16 rounded-xl object-cover flex-shrink-0" data-alt="A warm candlelight-lit fine dining Italian bistro interior with rustic brick accents, artisanal handmade pasta and tender flat iron steak dish, warm aesthetic, shot in soft golden hour lighting with shallow depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwNzMhIBo-ODHosNpg8DdgXmZy1f5wRRSgLvRHftTS9vHRugThRpB40tBtp5l4-AJR4ipijHASuUAhPPm7YBVLbcphKfeO_xEdttaPrIAMaiwACQ-rwKxJsI0grYDpdgCRuDPkjcVbRNgrWeDiWw36nbVFSDhx-at-yb_yTJ5IIuEikUadTEXYwyi8pHAcApvfPMffKS-LT3cF_wi2Zskp0BDLEKZhiHFEi_3NitePcW5rRv21uNr6"/>
+</div>
+<!-- AI Reason Callout -->
+<div class="bg-surface-container-low rounded-xl p-3 mb-space-md relative">
+<span class="material-symbols-outlined text-primary-container text-[16px] absolute top-2 right-2 opacity-50">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant pr-4">
+                "조용하게 대화를 나눌 수 있는 전용 부스석과 7만원 예산 내에서 2인 시그니처 생면 파스타 &amp; 살치살 스테이크 코스를 여유롭게 즐기기 최적화된 곳입니다."
+              </p>
+</div>
+<!-- Fact Badges & Verification -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2 py-1 rounded-md bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check</span> Kakao API 검증: 거리 650m
+              </span>
+<span class="px-2 py-1 rounded-md bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check</span> 메뉴 가격대 일치
+              </span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2 pt-1">
+<a class="flex-1 py-2 px-3 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest text-center font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" href="https://map.kakao.com" rel="noopener noreferrer" target="_blank">
+<span>카카오맵 길찾기</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<button class="py-2 px-4 rounded-xl bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1 hover:bg-primary transition-colors" onclick="focusLocation('dinner')" type="button">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+<span>지도 포커스</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Connector: Walk Step -->
+<div class="relative pl-8 pb-8">
+<div class="absolute left-2.5 top-0 bottom-0 w-[2px] bg-dashed bg-secondary-container/50"></div>
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-white shadow-sm font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-primary">directions_walk</span>
+<span>도보 4분 (280m) · 호수공원 수변 산책로 연결</span>
+</div>
+</div>
+<!-- Step 02: Cafe Card -->
+<div class="relative pl-8" id="step-cafe-card">
+<!-- Timeline Vertical Node -->
+<div class="absolute left-0 top-1 w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm font-bold shadow-md z-10">
+            2
+          </div>
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm transition-all duration-300 hover:shadow-md cursor-pointer" onclick="focusLocation('cafe')">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">local_cafe</span>
+                02 조용한 대화 · 20:00
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">스페셜티 로스터리</span>
+</div>
+<div class="flex gap-space-md items-start mb-space-md">
+<div class="flex-1 min-w-0">
+<h3 class="font-headline-sm text-headline-sm text-on-surface truncate" id="cafe-title">카페 엠비언트</h3>
+<p class="font-body-md text-text-muted text-xs mt-0.5 flex items-center gap-1" id="cafe-sub">
+<span class="material-symbols-outlined text-[14px]">near_me</span>
+                  식당에서 280m · 도보 4분 · 서구 청라에메랄드로
+                </p>
+</div>
+<img class="w-16 h-16 rounded-xl object-cover flex-shrink-0" data-alt="Warm artisanal coffee shop interior with low-contrast warm wooden tables, ambient glowing pendant lamps, poured espresso latte art and fresh vanilla bean tart dessert on marble tray." id="cafe-img" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ybGxVLqM8zAQN9B1VfpVugCALpjHT2cggBpmSu91WM40ubOcLQAVUsnOdKutAEcDwcoKPc1jbZPwBCtETj-MwJM8o6_NKf7tC8t9_MIppd8Ew1I4B_-0jtIxqoIOhDkwlnv5IJCvOEQydIBqz_FZ0BNLL5c19QWsPNRCOYt1JxsGar5J6P8e-U67NZIf8tNCIH5JsaL2ToFG5zV59Gq_wmN3gMNDaQ9pu_G79WmFktJdZpFojV6z"/>
+</div>
+<!-- AI Reason Callout -->
+<div class="bg-surface-container-low rounded-xl p-3 mb-space-md relative">
+<span class="material-symbols-outlined text-secondary-container text-[16px] absolute top-2 right-2 opacity-60">format_quote</span>
+<p class="font-body-md text-body-md text-on-surface-variant pr-4" id="cafe-quote">
+                "식사 후 은은한 앰비언트 조명 아래서 핸드드립 커피와 바닐라 타르트를 곁들이며 방해받지 않고 깊은 대화를 이어가기 좋은 감성 공간입니다."
+              </p>
+</div>
+<!-- Fact Badges -->
+<div class="flex flex-wrap items-center gap-1.5 mb-space-md">
+<span class="px-2 py-1 rounded-md bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">check</span> 라스트오더 21:30
+              </span>
+<span class="px-2 py-1 rounded-md bg-secondary-container/20 text-on-secondary-container font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">volume_mute</span> 조용한 배경음악 선별
+              </span>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2 pt-1">
+<a class="flex-1 py-2 px-3 rounded-xl bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest text-center font-label-md text-label-md flex items-center justify-center gap-1 transition-colors" href="https://map.kakao.com" rel="noopener noreferrer" target="_blank">
+<span>카카오맵 길찾기</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+<button class="py-2 px-3 rounded-xl bg-surface-white shadow-sm text-secondary hover:bg-surface-container font-label-md text-label-md flex items-center gap-1 transition-all" id="swap-cafe-btn" onclick="swapAlternativeCafe()" type="button">
+<span class="material-symbols-outlined text-[16px]">cached</span>
+<span>다른 카페 변경</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Radical Honesty Verification Card -->
+<section class="bg-surface-white rounded-2xl p-space-md shadow-sm space-y-space-sm mb-space-md">
+<div class="flex items-center gap-2 pb-1">
+<span class="material-symbols-outlined text-primary text-[18px]">verified_user</span>
+<h4 class="font-headline-sm text-label-md text-on-surface">투명한 AI 데이터 검증 리포트</h4>
+</div>
+<!-- Green Verified Block -->
+<div class="p-3 rounded-xl bg-tertiary-container/10 flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] flex-shrink-0 mt-0.5">check_circle</span>
+<p class="font-body-md text-label-sm text-on-surface-variant leading-relaxed">
+<span class="font-semibold text-tertiary">카카오 로컬 실시간 API 확인 완료:</span> 현재 영업중, 실제 도보 이동 거리, 공식 등록 도로명 주소, 식약처 위생등급 등록 상태가 일치합니다.
+          </p>
+</div>
+<!-- Amber Caution Block -->
+<div class="p-3 rounded-xl bg-warning-amber/15 flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] flex-shrink-0 mt-0.5">warning</span>
+<p class="font-body-md text-label-sm text-on-surface-variant leading-relaxed">
+<span class="font-semibold text-secondary">미확인 정보 안내:</span> 당일 프라이빗 예약석 잔여 여부 및 건물 지하 주차장의 실시간 빈자리 대수는 API 상에서 확인되지 않았습니다. 방문 전 유선 확인을 권장합니다.
+          </p>
+</div>
+</section>
+<!-- Brand Signature -->
+<div class="flex items-center justify-between text-text-muted py-2 text-xs">
+<span>AI Dining Engine v2.4 (Cheongna Core)</span>
+<button class="hover:underline flex items-center gap-0.5" type="button">
+<span>코스 링크 복사</span>
+<span class="material-symbols-outlined text-[12px]">share</span>
+</button>
+</div>
+</aside>
+<!-- Right Panel: Full-Canvas Interactive Kakao Map Simulation -->
+<main class="flex-1 relative min-h-[460px] lg:min-h-0 bg-surface-container overflow-hidden flex flex-col">
+<!-- Vector-Themed Realistic Map Canvas Simulation -->
+<div class="absolute inset-0 w-full h-full bg-[#f4ede6] select-none overflow-hidden">
+<!-- Map Canvas Architectural SVG Grid & Landmass & Cheongna Canal/Lake Body -->
+<svg class="w-full h-full object-cover" preserveaspectratio="xMidYMid slice" viewbox="0 0 1000 800" xmlns="http://www.w3.org/2000/svg">
+<!-- Definitions for Map Patterns -->
+<defs>
+<pattern height="40" id="urban-grid" patternunits="userSpaceOnUse" width="40">
+<path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e8ded4" stroke-width="0.75"></path>
+</pattern>
+<lineargradient id="water-gradient" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#cae7e3"></stop>
+<stop offset="100%" stop-color="#b4ddd8"></stop>
+</lineargradient>
+</defs>
+<!-- Landmass Background with subtle grid -->
+<rect fill="#f8f4ee" height="800" width="1000"></rect>
+<rect fill="url(#urban-grid)" height="800" opacity="0.6" width="1000"></rect>
+<!-- Urban Residential / Commercial Building Blocks -->
+<g fill="#ece3d8" opacity="0.8" stroke="#decaba" stroke-width="0.5">
+<rect height="80" rx="4" width="130" x="120" y="80"></rect>
+<rect height="70" rx="4" width="110" x="270" y="90"></rect>
+<rect height="90" rx="4" width="180" x="420" y="70"></rect>
+<rect height="110" rx="4" width="160" x="80" y="240"></rect>
+<rect height="90" rx="4" width="120" x="80" y="380"></rect>
+<rect height="130" rx="4" width="150" x="80" y="500"></rect>
+<rect height="140" rx="4" width="220" x="480" y="520"></rect>
+<rect height="120" rx="4" width="180" x="730" y="480"></rect>
+<rect height="130" rx="4" width="170" x="740" y="220"></rect>
+</g>
+<!-- Parks & Green Belt Around Lake -->
+<path d="M 280,180 C 350,160 520,180 580,240 C 640,300 660,420 620,540 C 580,660 420,700 320,640 C 240,590 220,440 240,320 Z" fill="#e2eddc" opacity="0.7"></path>
+<path d="M 680,80 C 760,110 820,140 850,220 C 780,250 720,200 680,140 Z" fill="#d9e9d3" opacity="0.6"></path>
+<!-- Cheongna Central Lake Body (Water Blue-Cyan) -->
+<path d="M 320,220 C 380,210 490,230 520,300 C 550,370 540,460 490,530 C 440,600 360,610 320,560 C 280,510 270,390 290,290 Z" fill="url(#water-gradient)"></path>
+<!-- Cheongna Canal Way (Waterway connecting to lake) -->
+<path d="M 0,380 C 150,380 200,370 280,390 C 300,390 350,380 500,390 C 640,400 780,380 1000,370" fill="none" stroke="url(#water-gradient)" stroke-linecap="round" stroke-width="24"></path>
+<path d="M 0,380 C 150,380 200,370 280,390 C 300,390 350,380 500,390 C 640,400 780,380 1000,370" fill="none" stroke="#a4d5cf" stroke-linecap="round" stroke-width="14"></path>
+<!-- Major Roads & Avenues -->
+<g fill="none" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round">
+<!-- Cheongna Canal-ro Main Arterial -->
+<path d="M 20,200 L 980,200" stroke-width="12"></path>
+<path d="M 20,480 L 980,480" stroke-width="12"></path>
+<path d="M 260,20 L 260,780" stroke-width="12"></path>
+<path d="M 700,20 L 700,780" stroke-width="12"></path>
+<!-- Secondary roads -->
+<path d="M 400,20 L 400,220" stroke-width="7"></path>
+<path d="M 400,560 L 400,780" stroke-width="7"></path>
+<path d="M 860,20 L 860,780" stroke-width="7"></path>
+<path d="M 20,680 L 980,680" stroke-width="7"></path>
+</g>
+<!-- Road Labels in Korean -->
+<text fill="#9c9388" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" x="140" y="194">청라커낼로</text>
+<text fill="#9c9388" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="600" x="710" y="320">청라에메랄드로</text>
+<text fill="#006a60" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="700" letter-spacing="2" opacity="0.6" x="360" y="440">청라호수공원</text>
+<!-- Walking Route Trajectory from Step 1 to Step 2 -->
+<g id="route-path">
+<!-- Outer Glow -->
+<path d="M 370,290 C 400,305 425,320 460,350" fill="none" stroke="#e76f51" stroke-linecap="round" stroke-opacity="0.25" stroke-width="8"></path>
+<!-- Dashed Path -->
+<path d="M 370,290 C 400,305 425,320 460,350" fill="none" stroke="#e76f51" stroke-dasharray="6,5" stroke-linecap="round" stroke-width="4"></path>
+</g>
+</svg>
+<!-- Dynamic Map Marker 0: Current Location (Pulsing Azure Circle) -->
+<div class="absolute left-[24%] top-[45%] -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer z-10">
+<div class="relative flex items-center justify-center">
+<span class="w-8 h-8 rounded-full bg-tertiary/25 animate-ping absolute"></span>
+<span class="w-4 h-4 rounded-full bg-tertiary-container shadow-md border-2 border-surface-white relative z-10"></span>
+</div>
+<span class="mt-1 px-2 py-0.5 rounded-full bg-surface-white/95 text-on-surface text-[11px] font-bold shadow-sm backdrop-blur-sm whitespace-nowrap">
+            내 위치 (청라2동)
+          </span>
+</div>
+<!-- Dynamic Map Marker 1: Bistro Mood (Terracotta #E76F51) -->
+<div class="absolute left-[37%] top-[36%] -translate-x-1/2 -translate-y-full flex flex-col items-center group cursor-pointer z-20 transition-transform duration-300 hover:scale-110" id="map-pin-dinner" onclick="focusLocation('dinner')">
+<div class="px-3 py-1.5 rounded-full bg-primary-container text-on-primary font-headline-sm text-label-sm shadow-[0_4px_14px_rgba(231,111,81,0.45)] flex items-center gap-1.5 whitespace-nowrap border-2 border-surface-white">
+<span class="w-2 h-2 rounded-full bg-surface-white"></span>
+<span class="font-bold">① 🍽️ 비스트로 무드</span>
+</div>
+<div class="w-2.5 h-2.5 bg-primary-container rotate-45 -mt-1 shadow-sm"></div>
+</div>
+<!-- Dynamic Map Marker 2: Cafe Ambient (Warm Amber #F4A261) -->
+<div class="absolute left-[46%] top-[44%] -translate-x-1/2 -translate-y-full flex flex-col items-center group cursor-pointer z-20 transition-transform duration-300 hover:scale-110" id="map-pin-cafe" onclick="focusLocation('cafe')">
+<div class="px-3 py-1.5 rounded-full bg-secondary-container text-on-secondary-container font-headline-sm text-label-sm shadow-[0_4px_14px_rgba(255,171,105,0.5)] flex items-center gap-1.5 whitespace-nowrap border-2 border-surface-white">
+<span class="w-2 h-2 rounded-full bg-on-secondary-container"></span>
+<span class="font-bold">② ☕ 카페 엠비언트</span>
+</div>
+<div class="w-2.5 h-2.5 bg-secondary-container rotate-45 -mt-1 shadow-sm"></div>
+</div>
+<!-- Floating Route Distance Badge on Map Canvas -->
+<div class="absolute left-[41.5%] top-[38%] -translate-x-1/2 -translate-y-1/2 z-20">
+<div class="px-2.5 py-1 rounded-full bg-surface-white/95 text-on-surface shadow-md border border-border-subtle/50 text-xs font-semibold flex items-center gap-1 backdrop-blur-sm pointer-events-none">
+<span class="material-symbols-outlined text-[13px] text-primary">directions_walk</span>
+<span>도보 4분 (280m)</span>
+</div>
+</div>
+<!-- Map Layer & Style Controls (Top Right) -->
+<div class="absolute top-4 right-4 flex flex-col items-end gap-2 z-30">
+<!-- View Toggle -->
+<div class="bg-surface-white/90 backdrop-blur-md p-1 rounded-xl shadow-md flex items-center gap-1">
+<button class="px-3 py-1.5 rounded-lg bg-on-surface text-surface-white font-label-sm text-label-sm font-semibold transition-all" type="button">지도</button>
+<button class="px-3 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm transition-all" onclick="alert('스카이뷰 위성 데이터 로드 중...')" type="button">스카이뷰</button>
+</div>
+<!-- Zoom & Location Actions -->
+<div class="bg-surface-white/90 backdrop-blur-md rounded-xl shadow-md flex flex-col overflow-hidden">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="zoomMock(1)" title="확대" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<div class="w-full h-[1px] bg-border-subtle"></div>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="zoomMock(-1)" title="축소" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+<div class="w-full h-[1px] bg-border-subtle"></div>
+<button class="w-10 h-10 flex items-center justify-center text-primary hover:bg-surface-container transition-colors" onclick="focusLocation('current')" title="내 위치로 이동" type="button">
+<span class="material-symbols-outlined text-[20px]">my_location</span>
+</button>
+</div>
+</div>
+<!-- Map Mini Inspector Preview Drawer (Floating Bottom Right) -->
+<div class="absolute bottom-4 right-4 left-4 sm:left-auto sm:w-80 bg-surface-white/95 backdrop-blur-xl rounded-2xl p-space-md shadow-xl border border-surface-white z-30 transition-all" id="map-preview-card">
+<div class="flex items-center justify-between mb-2">
+<span class="px-2 py-0.5 rounded-md bg-primary-container/20 text-primary font-label-sm text-xs font-bold" id="preview-tag">1st Stop · 저녁 코스</span>
+<span class="text-xs text-tertiary flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> 영업중 (22:00 마감)
+            </span>
+</div>
+<div class="flex items-start justify-between gap-2 mb-3">
+<div>
+<h4 class="font-headline-sm text-body-lg text-on-surface font-bold" id="preview-title">청라 비스트로 무드</h4>
+<p class="font-body-md text-xs text-text-muted mt-0.5" id="preview-desc">인천 서구 청라커낼로 260번길 14</p>
+</div>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]" id="preview-icon">restaurant</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-2 text-center text-xs font-semibold mb-3">
+<div class="bg-surface-container-low p-2 rounded-lg text-text-muted">
+              대표메뉴: <span class="text-on-surface">생면 트러플 파스타</span>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg text-text-muted">
+              평점: <span class="text-on-surface">★ 4.85 (카카오)</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="flex-1 py-2 px-3 rounded-xl bg-primary-container text-on-primary text-center font-label-md text-label-sm font-semibold hover:bg-primary transition-colors flex items-center justify-center gap-1" href="https://map.kakao.com" rel="noopener noreferrer" target="_blank">
+<span>카카오맵 바로 연결</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</a>
+<button class="p-2 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="alert('청라 데이트 코스가 클립보드에 복사되었습니다.')" title="공유하기" type="button">
+<span class="material-symbols-outlined text-[18px]">share</span>
+</button>
+</div>
+</div>
+<!-- Floating Watermark / Attribution -->
+<div class="absolute bottom-2 left-3 z-20 pointer-events-none text-[10px] text-text-muted/60 bg-surface-white/60 px-2 py-0.5 rounded backdrop-blur-xs">
+          Kakao Local Map Vector Simulation · 실시간 반경 2km
+        </div>
+</div>
+</main>
+</div>
+</div>
+<script>
+  // Simple Mock Interactive Switching logic for the Demo
+  const cafePool = [
+    {
+      title: "카페 엠비언트",
+      sub: "식당에서 280m · 도보 4분 · 청라 에메랄드로",
+      quote: "식사 후 은은한 앰비언트 조명 아래서 핸드드립 커피와 바닐라 타르트를 곁들이며 방해받지 않고 깊은 대화를 이어가기 좋은 감성 공간입니다.",
+      address: "인천 서구 청라에메랄드로 99",
+      menu: "핸드드립 & 타르트",
+      rating: "★ 4.79"
+    },
+    {
+      title: "청라 티 하우스 모먼트",
+      sub: "식당에서 320m · 도보 5분 · 커낼웨이 수변",
+      quote: "차분하고 따뜻한 우드 톤 인테리어와 시그니처 루이보스 블렌딩 티로 소화와 대화 모두를 편안하게 해주는 수변 힐링 찻집입니다.",
+      address: "인천 서구 청라커낼로 252 2층",
+      menu: "블렌딩 티 & 수제 모나카",
+      rating: "★ 4.88"
+    }
+  ];
+
+  let currentCafeIndex = 0;
+
+  function swapAlternativeCafe() {
+    currentCafeIndex = (currentCafeIndex + 1) % cafePool.length;
+    const selected = cafePool[currentCafeIndex];
+    
+    document.getElementById('cafe-title').innerText = selected.title;
+    document.getElementById('cafe-sub').innerText = selected.sub;
+    document.getElementById('cafe-quote').innerText = '"' + selected.quote + '"';
+    
+    // Update map pin label
+    const cafePin = document.getElementById('map-pin-cafe');
+    if (cafePin) {
+      cafePin.querySelector('span.font-bold').innerText = `② ☕ ${selected.title}`;
+    }
+
+    focusLocation('cafe');
+  }
+
+  function focusLocation(type) {
+    const cardDinner = document.getElementById('step-dinner-card');
+    const cardCafe = document.getElementById('step-cafe-card');
+    const previewTag = document.getElementById('preview-tag');
+    const previewTitle = document.getElementById('preview-title');
+    const previewDesc = document.getElementById('preview-desc');
+    const previewIcon = document.getElementById('preview-icon');
+
+    if (type === 'dinner') {
+      previewTag.className = "px-2 py-0.5 rounded-md bg-primary-container/20 text-primary font-label-sm text-xs font-bold";
+      previewTag.innerText = "1st Stop · 저녁 식사";
+      previewTitle.innerText = "청라 비스트로 무드";
+      previewDesc.innerText = "인천 서구 청라커낼로 260번길 14";
+      previewIcon.innerText = "restaurant";
+      
+      cardDinner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else if (type === 'cafe') {
+      const activeCafe = cafePool[currentCafeIndex];
+      previewTag.className = "px-2 py-0.5 rounded-md bg-secondary-container/30 text-on-secondary-container font-label-sm text-xs font-bold";
+      previewTag.innerText = "2nd Stop · 디저트 & 대화";
+      previewTitle.innerText = activeCafe.title;
+      previewDesc.innerText = activeCafe.address;
+      previewIcon.innerText = "local_cafe";
+
+      cardCafe.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } else {
+      previewTag.innerText = "Current Location";
+      previewTitle.innerText = "청라호수공원 인근 (내 위치)";
+      previewDesc.innerText = "인천 서구 연희동 청라2동 권역";
+      previewIcon.innerText = "my_location";
+    }
+  }
+
+  function zoomMock(dir) {
+    const svgMap = document.querySelector('svg');
+    if (svgMap) {
+      svgMap.style.transition = 'transform 0.25s ease';
+      const currentScale = svgMap.style.transform ? parseFloat(svgMap.style.transform.replace('scale(', '')) : 1;
+      const nextScale = Math.min(Math.max(currentScale + (dir * 0.15), 0.85), 1.5);
+      svgMap.style.transform = `scale(${nextScale})`;
+    }
+  }
+
+  // Interactive submit button pulse animation
+  document.getElementById('plan-regenerate-btn')?.addEventListener('click', function() {
+    this.classList.add('scale-95');
+    setTimeout(() => {
+      this.classList.remove('scale-95');
+      alert('청라호수공원 반경 맛집과 카페를 재분석하여 코스를 업데이트했습니다.');
+    }, 200);
+  });
+</script></main><footer class="w-full bg-surface-container-low py-space-md"><div class="w-full px-margin flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm text-text-muted"><div>© 2025 AI Dining Plan. Low-stimulus curated dining journeys.</div><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span>카카오맵 동기화 정상</span><span>인천 청라 권역 실시간 반영 중</span></div></div></footer></body></html>

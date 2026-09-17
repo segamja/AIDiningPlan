@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f5;}body{overscroll-behavior:none;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#3c0700","surface-container":"#f7ece6","tertiary-fixed-dim":"#6fd8c8","on-error":"#ffffff","on-surface":"#201b18","surface":"#fff8f5","on-primary-fixed-variant":"#83260e","surface-container-highest":"#ebe0db","on-tertiary-fixed":"#00201c","on-error-container":"#93000a","tertiary-container":"#33a395","text-muted":"#6B6661","on-secondary-container":"#783d01","surface-variant":"#ebe0db","on-primary":"#ffffff","outline-variant":"#dec0b9","on-tertiary":"#ffffff","surface-tint":"#a33d23","border-subtle":"#E8E3DD","error":"#ba1a1a","primary-container":"#e76f51","background":"#fff8f5","warning-amber":"#E9C46A","primary":"#a33d23","tertiary-fixed":"#8cf5e4","secondary-fixed-dim":"#ffb780","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#6f3800","surface-container-low":"#fdf1ec","inverse-on-surface":"#faeee9","on-tertiary-fixed-variant":"#005048","on-background":"#201b18","secondary-fixed":"#ffdcc4","background-sand":"#FBF9F6","surface-container-high":"#f1e6e1","secondary-container":"#ffab69","primary-fixed":"#ffdad2","primary-fixed-dim":"#ffb4a2","inverse-surface":"#352f2c","on-surface-variant":"#57423d","surface-white":"#FFFFFF","surface-dim":"#e3d8d3","error-container":"#ffdad6","on-tertiary-container":"#00322c","surface-bright":"#fff8f5","inverse-primary":"#ffb4a2","on-primary-container":"#590f00","outline":"#8a716c","tertiary":"#006a60","on-secondary-fixed":"#2f1400","secondary":"#8e4e14"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1rem","space-sm":"0.5rem","space-md":"1rem",margin:"1.5rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"24px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Warm terracotta gourmet dining fork icon intertwined with a subtle sparkling AI star mark, modern minimal clean geometry. Brand logo. - Primary color: #e76f51
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VsjQ_Qdq2Xw-dtyhfg-pbd88WQdHwgL3vH2IItO6pQzNBpncrx7EURTZxPPRKkYt6tjf9vm1cul3OfkZTvD5VLmIdpG4VxskGrfIoPYnekTshVKeHB-hhq4_fHKINCTupBqyzjyZX6G1UN2PnUkXSVynf3ZNavekz166CCWL4n555AjPEV068vszaKO8ht8Luv1IeNxZTv1eCpSZPOVaBRsenBqbySypisZwANyRC6W057alNpV5k3I5E"/><button class="h-11 px-space-sm flex items-center gap-1 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">near_me</span><span class="font-label-md text-label-md text-on-surface font-semibold">청라호수공원</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">keyboard_arrow_down</span></button></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-grow"><div class="flex flex-col w-full">
+<!-- Interactive Toast Notification -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 px-space-md py-2.5 rounded-full bg-inverse-surface text-inverse-on-surface shadow-xl flex items-center gap-2 transition-all duration-300 opacity-0 pointer-events-none translate-y-[-8px]" id="saveToast">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed">check_circle</span>
+<span class="font-label-sm text-label-sm">설정이 성공적으로 저장되었습니다</span>
+</div>
+<div class="px-space-md pt-2 pb-8 flex flex-col gap-5">
+<!-- 1. User Profile Header (Tactile Editorial Bento Card) -->
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm relative overflow-hidden">
+<div class="absolute -right-6 -top-6 w-32 h-32 rounded-full bg-surface-container-low pointer-events-none blur-xl"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex items-center gap-3.5">
+<div class="relative">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-on-secondary-container text-[30px]" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-primary-container text-surface-white flex items-center justify-center text-[10px] font-bold shadow-sm">
+              3
+            </div>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">김민준 님</span>
+<span class="bg-surface-container px-2 py-0.5 rounded-full text-[11px] font-semibold text-primary">미식 탐험가 Lv.3</span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted mt-0.5">내 플랜 생성 12회 · 저장 4개</p>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container active:scale-95 transition-all text-[12px] font-semibold flex items-center gap-1" type="button">
+<span>편집</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+<!-- Quick Stats Strip -->
+<div class="grid grid-cols-3 gap-2 mt-4 pt-4 bg-surface-container-low/60 rounded-xl p-2.5">
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-text-muted">다이닝 코스</span>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">12<span class="text-[12px] font-normal text-text-muted ml-0.5">회</span></span>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-text-muted">방문한 맛집</span>
+<span class="font-headline-sm text-headline-sm text-primary-container font-bold mt-0.5">6<span class="text-[12px] font-normal text-text-muted ml-0.5">곳</span></span>
+</div>
+<div class="flex flex-col items-center justify-center text-center">
+<span class="font-label-sm text-label-sm text-text-muted">취향 일치도</span>
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold mt-0.5">94<span class="text-[12px] font-normal text-text-muted ml-0.5">%</span></span>
+</div>
+</div>
+</div>
+<!-- 2. AI 식사 추천 개인화 설정 (Core Vibe Coding Feature) -->
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-lg bg-surface-container flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">AI 맞춤 설정</h2>
+<p class="font-label-sm text-label-sm text-text-muted">플랜 생성 시 기본으로 반영되는 조건</p>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm flex items-center gap-1 font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+          실시간 최적화
+        </span>
+</div>
+<div class="flex flex-col gap-4 pt-1">
+<!-- Activity Area -->
+<div class="bg-surface-container-low rounded-xl p-3 flex items-center justify-between">
+<div class="flex items-center gap-2.5 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px]">explore</span>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-muted">주 활동 지역</span>
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">인천 서구 청라동 (호수공원 일대)</span>
+</div>
+</div>
+<button class="shrink-0 px-2.5 py-1.5 rounded-lg bg-surface-white text-on-surface hover:bg-surface-container text-[12px] font-semibold shadow-sm active:scale-95 transition-transform" type="button">
+            변경
+          </button>
+</div>
+<!-- Food Preference Chips -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center justify-between">
+<span>선호 다이닝 스타일</span>
+<span class="text-[11px] font-normal text-text-muted">다중 선택 가능</span>
+</label>
+<div class="flex flex-wrap gap-2" id="preferenceChips">
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-primary-container text-surface-white flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span>이탈리안 🍝</span>
+</button>
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-primary-container text-surface-white flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span>정갈한 한식 🍚</span>
+</button>
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-primary-container text-surface-white flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span>스페셜티 카페 ☕</span>
+</button>
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-primary-container text-surface-white flex items-center gap-1.5 transition-all active:scale-95 shadow-sm" data-selected="true" type="button">
+<span>분위기 맛집 ✨</span>
+</button>
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant flex items-center gap-1.5 transition-all active:scale-95" data-selected="false" type="button">
+<span>내추럴 와인바 🍷</span>
+</button>
+<button class="chip-item h-8 px-3.5 rounded-full font-label-md text-label-md bg-surface-container text-on-surface-variant flex items-center gap-1.5 transition-all active:scale-95" data-selected="false" type="button">
+<span>디저트 페어링 🍰</span>
+</button>
+</div>
+</div>
+<!-- Walking Range Preference -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px]">directions_walk</span>
+<span class="font-label-md text-label-md text-on-surface">코스 간 이동 선호</span>
+</div>
+<span class="font-label-md text-label-md text-primary-container font-semibold" id="walkDistanceBadge">도보 5분 이내 (300m)</span>
+</div>
+<div class="relative flex items-center w-full mt-1">
+<input class="w-full h-1.5 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary-container focus:outline-none" id="distanceRange" max="15" min="3" step="1" type="range" value="5"/>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-text-muted px-0.5">
+<span>초근접 (3분)</span>
+<span>산책 겸 이동 (8분)</span>
+<span>여유 (15분)</span>
+</div>
+</div>
+<!-- Per Person Budget Preset -->
+<div class="flex items-center justify-between py-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">payments</span>
+<span class="font-label-md text-label-md text-on-surface">1인당 기본 예산</span>
+</div>
+<div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1.5 rounded-lg">
+<span class="font-body-md text-body-md text-on-surface font-semibold">3만 ~ 5만원대</span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">unfold_more</span>
+</div>
+</div>
+<!-- Radical Honesty / Fact Check Toggle -->
+<div class="bg-surface-container-low/70 rounded-xl p-3.5 flex items-start justify-between gap-3">
+<div class="flex items-start gap-2.5">
+<div class="w-7 h-7 rounded-full bg-tertiary-container/15 flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-tertiary text-[16px]">verified</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">AI 환각 차단 &amp; 팩트체크 알림</span>
+<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-tertiary text-surface-white">안심</span>
+</div>
+<p class="font-label-sm text-label-sm text-text-muted mt-0.5">네이버 플레이스 및 전화 영업이 검증된 시간대만 엄격히 코스에 포함합니다.</p>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0 mt-1">
+<input checked="" class="sr-only peer" id="factCheckToggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-tertiary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- 3. 최근 활동 요약 (Recent History & Memory) -->
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary-container text-[20px]">history_edu</span>
+          최근 활동 및 기억
+        </h3>
+<button class="text-text-muted hover:text-on-surface font-label-sm text-label-sm" type="button">모두 보기</button>
+</div>
+<!-- Recent Prompt Recall Box -->
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary-container">chat_bubble</span>
+            최근 생성한 프롬프트
+          </span>
+<span class="text-[11px] text-text-muted">어제 저녁</span>
+</div>
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-2">
+<p class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+            “아내와 청라호수공원에서 조용한 저녁 데이트... 주차 편하고 코스 사이 도보 산책로 예쁜 곳으로”
+          </p>
+<div class="flex items-center justify-between pt-1">
+<span class="text-[11px] text-text-muted">생성된 코스 2개 · 만족도 최고</span>
+<button class="px-2.5 py-1 rounded-full bg-primary-container text-surface-white font-label-sm text-label-sm hover:opacity-90 active:scale-95 transition-transform flex items-center gap-1 shadow-sm" id="reRunPromptBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+              원클릭 재검색
+            </button>
+</div>
+</div>
+<!-- Visited Places Row -->
+<div class="pt-1 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface font-semibold">방문 완료한 장소 (총 6곳)</span>
+<span class="text-[11px] text-primary font-semibold">후기 작성 대기 1건</span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<!-- Place 1 -->
+<div class="bg-surface-container-low rounded-xl p-2.5 flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Warm intimate Italian dining bistro interior in Cheongna with soft amber lighting, wine glasses on wooden table, modern cozy romantic atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnhGag47pmjnFiHLOs-t9T2crFJnKaMmdI-CRvbsD_ccx0XT4Mf831gpFKxlwFYCt3aVJb5-z_pPrGe9ZENmsKCv_YxbIJts9Q4ud0anv6XtVw8yq38VR7wO9bPa-mtvrJitttLvr3t98ygAvT2PJht653r-b-Y3tzqRNwK0jdetCb4rpwldVzjGzKiG_MJAwKdOUxu99PtePpqELz1b4ARGXyGNfwDFiNR9H3SuDesSXnyflY5Fmq"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">청라 비스트로 무드</span>
+<span class="text-[11px] text-text-muted truncate">파스타 &amp; 스테이크</span>
+<span class="text-[10px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">check</span> 방문 완료
+                </span>
+</div>
+</div>
+<!-- Place 2 -->
+<div class="bg-surface-container-low rounded-xl p-2.5 flex items-center gap-2.5">
+<div class="w-11 h-11 rounded-lg overflow-hidden shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist specialty coffee roastery with large windows overlooking Cheongna lake canal, warm afternoon glow, pourover coffee setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-oPTLT8rhK-BbGp-O8shjYR8g2sFhsL1DS6AxHMWsRdte7_vJRuNNe3FLDDwLmWxzGV4FqG1KQa4D7H-4RwGc5YzYAJaLWJX_SYgmuE1wTIuEiA0m4AyBq5l-NWxhcJGfQun0PwTYXftmkaRHdKf5s7ktuy48Xz3-aeXqDH3ob1yVVki30fushHM9Rk9zfts0mfnRuDdUN8lCMfsN7qsZbryeB4H-gQBcbYOOky07OLyALl4SesiQ"/>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-body-md text-body-md text-on-surface font-semibold truncate">카페 엠비언트</span>
+<span class="text-[11px] text-text-muted truncate">스페셜티 브루잉</span>
+<span class="text-[10px] text-tertiary font-semibold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[11px]">check</span> 방문 완료
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 4. 서비스 연동 및 관리 (Bento Grid) -->
+<div class="bg-surface-white rounded-2xl p-space-md shadow-sm flex flex-col gap-3">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">hub</span>
+        서비스 연동 및 엔진 관리
+      </h3>
+<!-- Kakao Map Sync Status -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-warning-amber/30 flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-[20px]">map</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-semibold">카카오 계정 연동</span>
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted">카카오맵 즐겨찾기 실시간 동기화 켜짐</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-muted text-[18px]">sync</span>
+</div>
+<!-- AI Engine Information Pill -->
+<div class="bg-surface-container-low rounded-xl p-3.5 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-primary-container/15 flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined text-[20px]">psychology</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-semibold">추론 엔진 사양</span>
+<span class="font-label-sm text-label-sm text-text-muted">GPT-4o Dining Plan Engine v2.1</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded bg-surface-white text-[11px] font-semibold text-primary shadow-sm">
+          Turbo 최적화
+        </span>
+</div>
+<!-- App Management Links -->
+<div class="pt-2 flex flex-col divide-y-0 gap-1 text-[13px]">
+<a class="py-2.5 px-2 flex items-center justify-between rounded-lg hover:bg-surface-container transition-colors text-on-surface" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">support_agent</span>
+            고객 지원 &amp; 피드백 남기기
+          </span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-2 flex items-center justify-between rounded-lg hover:bg-surface-container transition-colors text-on-surface" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">campaign</span>
+            공지사항 &amp; 업데이트 소식
+          </span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+</a>
+<a class="py-2.5 px-2 flex items-center justify-between rounded-lg hover:bg-surface-container transition-colors text-on-surface" href="#">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">policy</span>
+            개인정보 처리방침
+          </span>
+<span class="material-symbols-outlined text-text-muted text-[16px]">chevron_right</span>
+</a>
+</div>
+<!-- Version & Build Info -->
+<div class="mt-2 pt-3 text-center flex flex-col gap-1">
+<p class="font-label-sm text-label-sm text-text-muted">
+          v1.2.0 Beta · 8h Vibe Coding MVP Prototype
+        </p>
+<p class="text-[10px] text-text-muted/70">
+          청라국제도시 미식 데이터셋 정기 갱신 완료 (2025.02)
+        </p>
+</div>
+<!-- Logout Action -->
+<div class="pt-2">
+<button class="w-full py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-text-muted hover:text-on-surface font-label-md text-label-md transition-colors active:scale-[0.99]" type="button">
+          로그아웃
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Toast Helper
+  function showToast(message) {
+    const toast = document.getElementById('saveToast');
+    if (!toast) return;
+    if (message) {
+      toast.querySelector('span:last-child').textContent = message;
+    }
+    toast.classList.remove('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+    toast.classList.add('opacity-100', 'translate-y-0');
+    setTimeout(() => {
+      toast.classList.add('opacity-0', 'translate-y-[-8px]', 'pointer-events-none');
+      toast.classList.remove('opacity-100', 'translate-y-0');
+    }, 2200);
+  }
+
+  // Preference Chips Multi-toggle
+  const chipContainer = document.getElementById('preferenceChips');
+  if (chipContainer) {
+    chipContainer.addEventListener('click', (e) => {
+      const chip = e.target.closest('.chip-item');
+      if (!chip) return;
+      const isSelected = chip.getAttribute('data-selected') === 'true';
+      if (isSelected) {
+        chip.setAttribute('data-selected', 'false');
+        chip.classList.remove('bg-primary-container', 'text-surface-white', 'shadow-sm');
+        chip.classList.add('bg-surface-container', 'text-on-surface-variant');
+      } else {
+        chip.setAttribute('data-selected', 'true');
+        chip.classList.remove('bg-surface-container', 'text-on-surface-variant');
+        chip.classList.add('bg-primary-container', 'text-surface-white', 'shadow-sm');
+      }
+      showToast('취향 설정이 갱신되었습니다');
+    });
+  }
+
+  // Range Slider Feedback
+  const distanceRange = document.getElementById('distanceRange');
+  const distanceBadge = document.getElementById('walkDistanceBadge');
+  if (distanceRange && distanceBadge) {
+    distanceRange.addEventListener('input', (e) => {
+      const val = parseInt(e.target.value, 10);
+      const approxMeters = val * 65;
+      distanceBadge.textContent = `도보 ${val}분 이내 (${approxMeters}m)`;
+    });
+    distanceRange.addEventListener('change', () => {
+      showToast('선호 도보 반경이 저장되었습니다');
+    });
+  }
+
+  // Fact check toggle feedback
+  const factToggle = document.getElementById('factCheckToggle');
+  if (factToggle) {
+    factToggle.addEventListener('change', (e) => {
+      const state = e.target.checked ? '안심 필터 활성화됨' : '필터 완화됨';
+      showToast(`팩트체크: ${state}`);
+    });
+  }
+
+  // One-click prompt re-run trigger
+  const reRunBtn = document.getElementById('reRunPromptBtn');
+  if (reRunBtn) {
+    reRunBtn.addEventListener('click', () => {
+      showToast('이전 코스 프롬프트를 다시 생성 중입니다...');
+    });
+  }
+
+  // Active Bottom Tab highlight sync check
+  const myProfileTab = document.querySelector('nav a[data-path="profile"]');
+  if (myProfileTab) {
+    myProfileTab.classList.remove('text-text-muted');
+    myProfileTab.classList.add('text-primary-container', 'font-semibold');
+  }
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-white/90 backdrop-blur-xl shadow-[0_-4px_20px_-2px_rgba(31,26,23,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm">플래너</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="map-view" href="#"><span class="material-symbols-outlined text-[22px]">map</span><span class="font-label-sm text-label-sm">지도 보기</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="saved-plans" href="#"><span class="material-symbols-outlined text-[22px]">bookmark</span><span class="font-label-sm text-label-sm">저장된 플랜</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors gap-0.5 text-primary-container font-semibold" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">내 정보</span></a></div></nav></body></html>

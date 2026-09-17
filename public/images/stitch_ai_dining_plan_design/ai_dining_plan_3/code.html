@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fff8f5;}body{overscroll-behavior:none;font-family:'Plus Jakarta Sans',sans-serif;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-primary-fixed":"#3c0700","surface-container":"#f7ece6","tertiary-fixed-dim":"#6fd8c8","on-error":"#ffffff","on-surface":"#201b18","surface":"#fff8f5","on-primary-fixed-variant":"#83260e","surface-container-highest":"#ebe0db","on-tertiary-fixed":"#00201c","on-error-container":"#93000a","tertiary-container":"#33a395","text-muted":"#6B6661","on-secondary-container":"#783d01","surface-variant":"#ebe0db","on-primary":"#ffffff","outline-variant":"#dec0b9","on-tertiary":"#ffffff","surface-tint":"#a33d23","border-subtle":"#E8E3DD","error":"#ba1a1a","primary-container":"#e76f51","background":"#fff8f5","warning-amber":"#E9C46A","primary":"#a33d23","tertiary-fixed":"#8cf5e4","secondary-fixed-dim":"#ffb780","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-secondary-fixed-variant":"#6f3800","surface-container-low":"#fdf1ec","inverse-on-surface":"#faeee9","on-tertiary-fixed-variant":"#005048","on-background":"#201b18","secondary-fixed":"#ffdcc4","background-sand":"#FBF9F6","surface-container-high":"#f1e6e1","secondary-container":"#ffab69","primary-fixed":"#ffdad2","primary-fixed-dim":"#ffb4a2","inverse-surface":"#352f2c","on-surface-variant":"#57423d","surface-white":"#FFFFFF","surface-dim":"#e3d8d3","error-container":"#ffdad6","on-tertiary-container":"#00322c","surface-bright":"#fff8f5","inverse-primary":"#ffb4a2","on-primary-container":"#590f00","outline":"#8a716c","tertiary":"#006a60","on-secondary-fixed":"#2f1400","secondary":"#8e4e14"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{gutter:"1rem","space-sm":"0.5rem","space-md":"1rem",margin:"1.5rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2rem"},fontFamily:{"headline-lg":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"]},fontSize:{"headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["14px",{lineHeight:"22px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-lg":["15px",{lineHeight:"24px",fontWeight:"500"}],"label-md":["13px",{lineHeight:"18px",fontWeight:"600"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.02em",fontWeight:"700"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-md":["22px",{lineHeight:"30px",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Warm terracotta gourmet dining fork icon intertwined with a subtle sparkling AI star mark, modern minimal clean geometry. Brand logo. - Primary color: #e76f51
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VsjQ_Qdq2Xw-dtyhfg-pbd88WQdHwgL3vH2IItO6pQzNBpncrx7EURTZxPPRKkYt6tjf9vm1cul3OfkZTvD5VLmIdpG4VxskGrfIoPYnekTshVKeHB-hhq4_fHKINCTupBqyzjyZX6G1UN2PnUkXSVynf3ZNavekz166CCWL4n555AjPEV068vszaKO8ht8Luv1IeNxZTv1eCpSZPOVaBRsenBqbySypisZwANyRC6W057alNpV5k3I5E"/><button class="h-11 px-space-sm flex items-center gap-1 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-primary text-[18px]">near_me</span><span class="font-label-md text-label-md text-on-surface font-semibold">청라호수공원</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">keyboard_arrow_down</span></button></div><div class="flex items-center gap-space-xs"><button aria-label="Notifications" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container transition-colors relative"><span class="material-symbols-outlined text-[22px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-primary-container"></span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-surface flex-grow"><div class="flex flex-col w-full relative select-none">
+<!-- Interactive Kakao Map Canvas Area (Visual Simulation) -->
+<div class="relative w-full overflow-hidden h-[760px] bg-surface-container-low" id="map-viewport">
+<!-- Map Background Vector/SVG Graphic Simulation -->
+<svg class="absolute inset-0 w-full h-full object-cover" fill="none" preserveaspectratio="xMidYMid slice" viewbox="0 0 420 760" xmlns="http://www.w3.org/2000/svg">
+<!-- Land Base -->
+<rect fill="#FBF9F6" height="760" width="420"></rect>
+<!-- Urban Grid / Parcels -->
+<rect fill="#F5EFEB" height="150" opacity="0.8" rx="16" width="130" x="-20" y="30"></rect>
+<rect fill="#F3ECE6" height="110" opacity="0.7" rx="16" width="160" x="130" y="-10"></rect>
+<rect fill="#F5EFEB" height="180" opacity="0.8" rx="16" width="140" x="310" y="40"></rect>
+<rect fill="#F4EDE8" height="230" opacity="0.85" rx="20" width="110" x="-30" y="240"></rect>
+<rect fill="#F2EAE4" height="210" opacity="0.9" rx="20" width="120" x="330" y="310"></rect>
+<rect fill="#F6F0EC" height="250" opacity="0.7" rx="20" width="160" x="-10" y="530"></rect>
+<rect fill="#F5EEEA" height="200" opacity="0.8" rx="20" width="150" x="290" y="580"></rect>
+<!-- Secondary Park Canals / Greenways -->
+<path d="M 60 0 C 80 120, 90 220, 110 320 C 130 420, 140 600, 150 760" stroke="#E6F4F1" stroke-linecap="round" stroke-width="26"></path>
+<path d="M 360 0 C 340 180, 310 340, 290 520 C 270 660, 275 720, 280 760" stroke="#E6F4F1" stroke-linecap="round" stroke-width="22"></path>
+<!-- Cheongna Central Lake Waters (청라호수공원 수변 공간) -->
+<path d="M 170 60 C 240 70, 270 140, 260 250 C 250 360, 280 430, 240 540 C 210 620, 160 670, 140 760 C 110 650, 125 470, 135 370 C 145 250, 120 120, 170 60 Z" fill="#D9EFF7"></path>
+<path d="M 185 110 C 230 120, 245 170, 240 240 C 235 320, 255 390, 225 480 C 198 550, 165 590, 150 670 C 135 580, 145 440, 150 360 C 158 260, 145 150, 185 110 Z" fill="#CEE9F4" opacity="0.6"></path>
+<!-- Waterfront Promenade Trails (수변 산책로) -->
+<path d="M 132 180 C 142 270, 134 380, 124 500 C 118 570, 130 650, 136 710" stroke="#D1C7BD" stroke-dasharray="6 6" stroke-width="3.5"></path>
+<path d="M 266 160 C 254 260, 276 370, 246 490 C 226 570, 196 640, 170 720" stroke="#D1C7BD" stroke-dasharray="6 6" stroke-width="3.5"></path>
+<!-- Main Avenues (크리스탈로, 호수공원로) -->
+<path d="M 0 200 L 420 230" stroke="#FFFFFF" stroke-width="14"></path>
+<path d="M 0 200 L 420 230" stroke="#EAE3DB" stroke-width="8"></path>
+<path d="M 0 460 C 120 450, 260 480, 420 465" stroke="#FFFFFF" stroke-width="16"></path>
+<path d="M 0 460 C 120 450, 260 480, 420 465" stroke="#EAE3DB" stroke-width="10"></path>
+<path d="M 90 0 L 105 760" stroke="#FFFFFF" stroke-width="12"></path>
+<path d="M 90 0 L 105 760" stroke="#EFE9E2" stroke-width="6"></path>
+<path d="M 320 0 L 305 760" stroke="#FFFFFF" stroke-width="12"></path>
+<path d="M 320 0 L 305 760" stroke="#EFE9E2" stroke-width="6"></path>
+<!-- Walking Route Connection (Stop 1 to Stop 2) -->
+<path class="animate-pulse" d="M 126 312 C 148 318, 172 328, 198 338 C 220 346, 240 354, 258 372" id="course-route" stroke="#E76F51" stroke-dasharray="7 7" stroke-linecap="round" stroke-width="5"></path>
+<circle cx="126" cy="312" fill="#E76F51" r="7"></circle>
+<circle cx="258" cy="372" fill="#FFAB69" r="7"></circle>
+</svg>
+<!-- Map Ambience Labels (Typography on Map) -->
+<div class="absolute top-[28%] left-[45%] -translate-x-1/2 pointer-events-none text-center">
+<span class="font-label-sm text-label-sm tracking-wider text-tertiary/70 font-bold uppercase block">Cheongna Lake Park</span>
+<span class="font-headline-sm text-headline-sm text-tertiary/80 font-bold tracking-tight">청라호수공원</span>
+<span class="inline-flex items-center gap-1 mt-0.5 px-2 py-0.5 rounded-full bg-surface-white/70 backdrop-blur-xs text-[11px] font-medium text-text-muted">
+<span class="material-symbols-outlined text-[12px] text-tertiary">water_drop</span>음악분수 수변광장
+      </span>
+</div>
+<div class="absolute top-[59%] left-[58%] pointer-events-none">
+<span class="font-label-sm text-label-sm text-outline/80">호수공원 남측 산책로</span>
+</div>
+<!-- Floating Top Bar: Search, Radius chip & Quick Mood Filters -->
+<div class="absolute top-3 inset-x-0 px-space-md flex flex-col gap-2 z-20 pointer-events-auto">
+<!-- Search & Geolocation Refresh Bar -->
+<div class="flex items-center justify-between gap-2 p-1.5 pl-3.5 bg-surface-white/95 backdrop-blur-md rounded-full shadow-[0_4px_20px_-2px_rgba(31,26,23,0.08)]">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-primary text-[20px] shrink-0">location_on</span>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">청라호수공원 일대</span>
+<span class="px-1.5 py-0.5 rounded-full bg-surface-container-high text-[11px] font-semibold text-primary">반경 2km</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-9 h-9 flex items-center justify-center rounded-full bg-surface-container-low hover:bg-surface-container active:scale-95 transition-all text-on-surface" id="btn-refresh-radius" title="위치 새로고침" type="button">
+<span class="material-symbols-outlined text-[19px] text-text-muted">refresh</span>
+</button>
+<button class="h-9 px-3 rounded-full bg-primary hover:bg-primary-container active:scale-95 transition-all text-on-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>조건설정</span>
+</button>
+</div>
+</div>
+<!-- Quick Filter Pills (Horizontal Scrollable) -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 -mx-space-md px-space-md">
+<button class="filter-chip shrink-0 h-8 px-3.5 rounded-full bg-on-surface text-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-filter="all" type="button">
+<span class="material-symbols-outlined text-[15px]">route</span>
+<span>전체 코스 (식당+카페)</span>
+</button>
+<button class="filter-chip shrink-0 h-8 px-3 rounded-full bg-surface-white/95 backdrop-blur-md text-text-muted hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-filter="meal" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">restaurant</span>
+<span>1차 식당만</span>
+</button>
+<button class="filter-chip shrink-0 h-8 px-3 rounded-full bg-surface-white/95 backdrop-blur-md text-text-muted hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-filter="cafe" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary-container">local_cafe</span>
+<span>2차 감성카페만</span>
+</button>
+<button class="filter-chip shrink-0 h-8 px-3 rounded-full bg-surface-white/95 backdrop-blur-md text-text-muted hover:text-on-surface font-label-md text-label-md flex items-center gap-1.5 shadow-sm transition-transform active:scale-95" data-filter="walk5" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">directions_walk</span>
+<span>도보 5분이내</span>
+</button>
+</div>
+</div>
+<!-- MARKER 1: 1st Course Dining (Terracotta #E76F51) -->
+<div class="absolute top-[282px] left-[78px] z-30 cursor-pointer group" id="marker-stop-1">
+<div class="relative flex flex-col items-center">
+<!-- Floating Label Card -->
+<div class="mb-1.5 flex items-center gap-1.5 bg-surface-white px-2.5 py-1.5 rounded-xl shadow-[0_6px_20px_-4px_rgba(231,111,81,0.35)] transition-all duration-300 transform group-hover:-translate-y-1">
+<span class="w-5 h-5 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-bold text-[11px]">1</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface leading-tight">청라 비스트로 무드</span>
+<div class="flex items-center gap-1 text-[11px] leading-tight">
+<span class="text-primary font-bold">★ 4.85</span>
+<span class="text-text-muted">· 유러피안</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[16px]">restaurant</span>
+</div>
+<!-- Pin Stalk / Indicator -->
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg transform active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">dining</span>
+</div>
+<div class="w-2.5 h-2.5 -mt-1 bg-primary-container rotate-45 rounded-xs"></div>
+<div class="w-6 h-2 mt-0.5 bg-on-surface/15 rounded-full blur-[2px]"></div>
+</div>
+</div>
+<!-- WALKING ROUTE BADGE ON CANVAS -->
+<div class="absolute top-[338px] left-[175px] -translate-x-1/2 z-20 pointer-events-none">
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-white/95 backdrop-blur-md shadow-[0_2px_10px_rgba(0,0,0,0.08)]">
+<span class="material-symbols-outlined text-primary text-[14px]">directions_walk</span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">도보 4분</span>
+<span class="text-[11px] text-text-muted">(280m 수변길)</span>
+</div>
+</div>
+<!-- MARKER 2: 2nd Course Cafe (Amber / Secondary) -->
+<div class="absolute top-[342px] left-[236px] z-30 cursor-pointer group" id="marker-stop-2">
+<div class="relative flex flex-col items-center">
+<!-- Floating Label Card -->
+<div class="mb-1.5 flex items-center gap-1.5 bg-surface-white px-2.5 py-1.5 rounded-xl shadow-[0_6px_20px_-4px_rgba(255,171,105,0.45)] transition-all duration-300 transform group-hover:-translate-y-1">
+<span class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-[11px]">2</span>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-bold text-on-surface leading-tight">카페 엠비언트</span>
+<div class="flex items-center gap-1 text-[11px] leading-tight">
+<span class="text-secondary font-bold">★ 4.91</span>
+<span class="text-text-muted">· 로스터리</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-secondary text-[16px]">coffee</span>
+</div>
+<!-- Pin Stalk -->
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-lg transform active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>
+</div>
+<div class="w-2.5 h-2.5 -mt-1 bg-secondary-container rotate-45 rounded-xs"></div>
+<div class="w-6 h-2 mt-0.5 bg-on-surface/15 rounded-full blur-[2px]"></div>
+</div>
+</div>
+<!-- USER LOCATION PIN: Pulsing cyan/blue dot -->
+<div class="absolute top-[410px] left-[118px] z-20 flex flex-col items-center">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-8 h-8 rounded-full bg-tertiary/20 animate-ping"></span>
+<span class="relative w-4 h-4 rounded-full bg-tertiary shadow-md flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-surface-white"></span>
+</span>
+</div>
+<div class="mt-1 px-2 py-0.5 rounded-full bg-surface-white/90 backdrop-blur-xs shadow-xs text-[10px] font-bold text-tertiary">
+        내 위치 (호수공원로)
+      </div>
+</div>
+<!-- Map Floating Controls (Zoom, Re-center, Kakao badge) -->
+<div class="absolute right-space-md top-28 flex flex-col gap-2 z-20">
+<!-- Zoom In / Out Group -->
+<div class="flex flex-col rounded-xl overflow-hidden bg-surface-white shadow-[0_4px_16px_rgba(0,0,0,0.08)]">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" id="btn-zoom-in" title="지도 확대" type="button">
+<span class="material-symbols-outlined text-[20px]">add</span>
+</button>
+<div class="h-[1px] w-full bg-surface-container"></div>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" id="btn-zoom-out" title="지도 축소" type="button">
+<span class="material-symbols-outlined text-[20px]">remove</span>
+</button>
+</div>
+<!-- Current GPS Center Button -->
+<button class="w-10 h-10 rounded-xl bg-surface-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" id="btn-my-location" title="내 위치로 이동" type="button">
+<span class="material-symbols-outlined text-[20px] text-tertiary">my_location</span>
+</button>
+<!-- Kakao Traffic Layer Toggle -->
+<button class="w-10 h-10 rounded-xl bg-surface-white shadow-[0_4px_16px_rgba(0,0,0,0.08)] flex items-center justify-center text-on-surface hover:bg-surface-container active:scale-95 transition-all" title="교통상황" type="button">
+<span class="material-symbols-outlined text-[20px] text-text-muted">traffic</span>
+</button>
+</div>
+<!-- Kakao Map SDK Attribution Stamp -->
+<div class="absolute left-space-md top-28 z-20 flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-white/90 backdrop-blur-sm shadow-xs">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-[11px] font-semibold text-text-muted">Kakao Map SDK 실시간 연동</span>
+</div>
+</div>
+<!-- Bottom Slide-up Sheet / Carousel Card (Interactive Plan Preview) -->
+<div class="relative -mt-36 z-30 w-full px-space-md pb-6 flex flex-col gap-3">
+<!-- Bottom Sheet Card Container -->
+<div class="w-full bg-surface-white rounded-3xl shadow-[0_8px_32px_-4px_rgba(31,26,23,0.14)] p-4 flex flex-col gap-3">
+<!-- Sheet Pull Handle -->
+<div class="w-10 h-1 rounded-full bg-surface-container-highest mx-auto"></div>
+<!-- Sheet Header: Selected Course Summary -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded-md bg-surface-container-high text-primary font-label-sm text-label-sm font-bold">AI 최적 코스</span>
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>총 2.5시간 소요
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate mt-0.5">로맨틱 디너 &amp; 캔들라이트 코스</h2>
+</div>
+<button class="w-9 h-9 rounded-full bg-surface-container-low hover:bg-surface-container flex items-center justify-center text-on-surface transition-colors" title="플랜 즐겨찾기" type="button">
+<span class="material-symbols-outlined text-[20px] text-primary">bookmark</span>
+</button>
+</div>
+<!-- Course Stops Swipeable Carousel -->
+<div class="flex items-stretch gap-3 overflow-x-auto no-scrollbar py-1" id="stops-carousel">
+<!-- Stop Card 1 (Active / Dining) -->
+<div class="stop-card active min-w-[285px] max-w-[295px] flex-1 p-3.5 rounded-2xl bg-surface-container-low transition-all duration-200 cursor-pointer shadow-sm" data-stop="1">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-primary-container text-on-primary font-bold text-xs flex items-center justify-center">1차</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">청라 비스트로 무드</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-primary/10 text-primary font-label-sm text-[11px] font-bold">★ 4.85</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mt-2">
+            프라임 안심 스테이크 &amp; 트러플 크림 파스타
+          </p>
+<div class="flex items-center gap-2 mt-2.5 text-[12px] text-text-muted">
+<span class="flex items-center gap-0.5 text-tertiary font-semibold">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>예약 확정율 98%
+            </span>
+<span>·</span>
+<span>예산 4.9만원</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-2.5">
+<button class="h-8 rounded-xl bg-surface-white hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 shadow-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">info</span>
+<span>상세보기</span>
+</button>
+<button class="h-8 rounded-xl bg-primary-container text-on-primary font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 shadow-xs hover:bg-primary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">navigation</span>
+<span>길찾기</span>
+</button>
+</div>
+</div>
+<!-- Stop Card 2 (Cafe Stop) -->
+<div class="stop-card min-w-[285px] max-w-[295px] flex-1 p-3.5 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-200 cursor-pointer shadow-sm" data-stop="2">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-center gap-1.5">
+<span class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container font-bold text-xs flex items-center justify-center">2차</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">카페 엠비언트</span>
+</div>
+<span class="px-1.5 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-[11px] font-bold">★ 4.91</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-1 mt-2">
+            스페셜티 게이샤 핸드드립 &amp; 호지차 바스크 케이크
+          </p>
+<div class="flex items-center gap-2 mt-2.5 text-[12px] text-text-muted">
+<span class="flex items-center gap-0.5 text-primary font-semibold">
+<span class="material-symbols-outlined text-[14px]">directions_walk</span>1차에서 도보 4분
+            </span>
+<span>·</span>
+<span>호수뷰 테라스석</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-3 pt-2.5">
+<button class="h-8 rounded-xl bg-surface-white hover:bg-surface-container text-on-surface font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 shadow-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">autorenew</span>
+<span>카페 변경</span>
+</button>
+<button class="h-8 rounded-xl bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold flex items-center justify-center gap-1 shadow-xs hover:bg-secondary transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">navigation</span>
+<span>길찾기</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Footer: Kakao Map Full Course Launch CTA -->
+<div class="pt-1">
+<button class="w-full h-12 rounded-xl bg-primary hover:bg-primary-container active:scale-[0.99] text-on-primary font-headline-sm text-headline-sm flex items-center justify-center gap-2 shadow-md transition-all" id="btn-kakao-launch" type="button">
+<span class="material-symbols-outlined text-[20px]">map</span>
+<span>카카오맵 앱에서 전체 코스 열기</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<p class="text-center text-[11px] text-text-muted mt-2">
+          카카오내비 및 도보 수변길 실시간 안내를 바로 시작할 수 있습니다.
+        </p>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function initCheongnaMapView() {
+    const marker1 = document.getElementById('marker-stop-1');
+    const marker2 = document.getElementById('marker-stop-2');
+    const stopCards = document.querySelectorAll('.stop-card');
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const refreshBtn = document.getElementById('btn-refresh-radius');
+    const zoomInBtn = document.getElementById('btn-zoom-in');
+    const zoomOutBtn = document.getElementById('btn-zoom-out');
+    const myLocationBtn = document.getElementById('btn-my-location');
+    const kakaoLaunchBtn = document.getElementById('btn-kakao-launch');
+    const mapViewport = document.getElementById('map-viewport');
+
+    // Synchronized Card & Marker Highlight
+    function selectStop(stopIndex) {
+      stopCards.forEach((card) => {
+        if (card.dataset.stop === String(stopIndex)) {
+          card.classList.add('bg-surface-container');
+          card.classList.remove('bg-surface-container-low');
+        } else {
+          card.classList.remove('bg-surface-container');
+          card.classList.add('bg-surface-container-low');
+        }
+      });
+
+      if (stopIndex === 1 && marker1) {
+        marker1.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        marker1.classList.add('scale-105');
+        if (marker2) marker2.classList.remove('scale-105');
+      } else if (stopIndex === 2 && marker2) {
+        marker2.scrollIntoView({ behavior: 'smooth', block: 'center', inline: 'center' });
+        marker2.classList.add('scale-105');
+        if (marker1) marker1.classList.remove('scale-105');
+      }
+    }
+
+    if (marker1) marker1.addEventListener('click', () => selectStop(1));
+    if (marker2) marker2.addEventListener('click', () => selectStop(2));
+
+    stopCards.forEach((card) => {
+      card.addEventListener('click', () => {
+        const id = parseInt(card.dataset.stop, 10);
+        selectStop(id);
+      });
+    });
+
+    // Filter Chips Toggle
+    filterChips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach((c) => {
+          c.classList.remove('bg-on-surface', 'text-surface');
+          c.classList.add('bg-surface-white/95', 'text-text-muted');
+        });
+        chip.classList.remove('bg-surface-white/95', 'text-text-muted');
+        chip.classList.add('bg-on-surface', 'text-surface');
+      });
+    });
+
+    // Micro-interactions
+    if (refreshBtn) {
+      refreshBtn.addEventListener('click', () => {
+        refreshBtn.classList.add('rotate-180');
+        setTimeout(() => refreshBtn.classList.remove('rotate-180'), 400);
+      });
+    }
+
+    let zoomScale = 1;
+    if (zoomInBtn && mapViewport) {
+      zoomInBtn.addEventListener('click', () => {
+        zoomScale = Math.min(zoomScale + 0.1, 1.3);
+        const svg = mapViewport.querySelector('svg');
+        if (svg) svg.style.transform = `scale(${zoomScale})`;
+        if (svg) svg.style.transition = 'transform 0.25s ease-out';
+      });
+    }
+
+    if (zoomOutBtn && mapViewport) {
+      zoomOutBtn.addEventListener('click', () => {
+        zoomScale = Math.max(zoomScale - 0.1, 0.85);
+        const svg = mapViewport.querySelector('svg');
+        if (svg) svg.style.transform = `scale(${zoomScale})`;
+        if (svg) svg.style.transition = 'transform 0.25s ease-out';
+      });
+    }
+
+    if (myLocationBtn) {
+      myLocationBtn.addEventListener('click', () => {
+        selectStop(1);
+      });
+    }
+
+    if (kakaoLaunchBtn) {
+      kakaoLaunchBtn.addEventListener('click', () => {
+        kakaoLaunchBtn.classList.add('opacity-90', 'scale-[0.98]');
+        setTimeout(() => {
+          kakaoLaunchBtn.classList.remove('opacity-90', 'scale-[0.98]');
+        }, 200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface-white/90 backdrop-blur-xl shadow-[0_-4px_20px_-2px_rgba(31,26,23,0.06)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="planner" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm">플래너</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] transition-colors gap-0.5 text-primary-container font-semibold" data-path="map-view" href="#"><span class="material-symbols-outlined text-[22px]">map</span><span class="font-label-sm text-label-sm">지도 보기</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="saved-plans" href="#"><span class="material-symbols-outlined text-[22px]">bookmark</span><span class="font-label-sm text-label-sm">저장된 플랜</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] text-text-muted hover:text-on-surface transition-colors gap-0.5" data-path="profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm">내 정보</span></a></div></nav></body></html>

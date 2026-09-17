@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><title>AI Dining Plan</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-container": "#e76f51", "tertiary-fixed": "#8cf5e4", "tertiary": "#006a60", "tertiary-fixed-dim": "#6fd8c8", "surface-bright": "#fff8f5", "on-error": "#ffffff", "surface-container": "#f7ece6", "on-tertiary": "#ffffff", "warning-amber": "#E9C46A", "on-primary-fixed": "#3c0700", "surface-variant": "#ebe0db", "surface-dim": "#e3d8d3", "primary-fixed": "#ffdad2", "on-primary-container": "#590f00", "background": "#fff8f5", "text-muted": "#6B6661", "secondary-fixed": "#ffdcc4", "on-primary-fixed-variant": "#83260e", "primary": "#a33d23", "on-surface-variant": "#57423d", "background-sand": "#FBF9F6", "outline-variant": "#dec0b9", "surface-container-lowest": "#ffffff", "inverse-primary": "#ffb4a2", "tertiary-container": "#33a395", "surface": "#fff8f5", "on-error-container": "#93000a", "on-secondary-fixed-variant": "#6f3800", "on-tertiary-fixed-variant": "#005048", "error": "#ba1a1a", "on-secondary-container": "#783d01", "surface-container-highest": "#ebe0db", "on-secondary": "#ffffff", "on-secondary-fixed": "#2f1400", "secondary": "#8e4e14", "on-surface": "#201b18", "error-container": "#ffdad6", "inverse-on-surface": "#faeee9", "secondary-fixed-dim": "#ffb780", "on-primary": "#ffffff", "surface-white": "#FFFFFF", "surface-tint": "#a33d23", "primary-fixed-dim": "#ffb4a2", "surface-container-low": "#fdf1ec", "inverse-surface": "#352f2c", "on-tertiary-container": "#00322c", "on-tertiary-fixed": "#00201c", "surface-container-high": "#f1e6e1", "outline": "#8a716c", "secondary-container": "#ffab69", "border-subtle": "#E8E3DD", "on-background": "#201b18" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-xs": "0.25rem", "space-xl": "2rem", "gutter": "1rem", "space-md": "1rem", "space-lg": "1.5rem", "margin": "1.5rem", "space-sm": "0.5rem" }, "fontFamily": { "headline-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"] }, "fontSize": { "headline-lg-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "body-lg": ["15px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "fontWeight": "600" }] } } } };</script></head><body class="bg-background-sand text-on-surface flex flex-col font-body-md text-body-md"><header class="fixed top-0 w-full z-50 pt-safe bg-background-sand/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Warm terracotta gourmet dining fork icon intertwined with a subtle sparkling AI star mark, modern minimal clean geometry. Brand logo. - Primary color: #e76f51
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-md
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VsjQ_Qdq2Xw-dtyhfg-pbd88WQdHwgL3vH2IItO6pQzNBpncrx7EURTZxPPRKkYt6tjf9vm1cul3OfkZTvD5VLmIdpG4VxskGrfIoPYnekTshVKeHB-hhq4_fHKINCTupBqyzjyZX6G1UN2PnUkXSVynf3ZNavekz166CCWL4n555AjPEV068vszaKO8ht8Luv1IeNxZTv1eCpSZPOVaBRsenBqbySypisZwANyRC6W057alNpV5k3I5E"/><button class="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-white/80 text-on-surface shadow-[0_1px_6px_rgba(31,26,23,0.04)] hover:bg-surface-white active:scale-95 transition-all min-h-[36px]"><span class="material-symbols-outlined text-primary text-[16px]">near_me</span><span class="font-label-sm text-label-sm font-semibold">청라호수공원</span><span class="material-symbols-outlined text-text-muted text-[16px]">expand_more</span></button></div><div class="flex items-center gap-space-xs"><span class="sr-only">Planner Home</span><button aria-label="저장된 플랜 북마크" class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface hover:bg-surface-white/70 active:scale-95 transition-all"><span class="material-symbols-outlined text-[22px]">bookmark</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-24 bg-background-sand min-h-screen"><div class="flex flex-col w-full">
+<!-- 1. Top Interactive Map Canvas (230px) -->
+<section class="relative w-full h-[230px] overflow-hidden bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-location="Incheon Cheongna Lake Park, South Korea" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBs0rOPrVtz_GHWGjyplkr1YWliwnPkdP6YLqix90Q8SNmvC879WX0L1DZRHlG_6mM5hnt2LfVEJTJRf3HykhmTGZHbKjtQkyybPi_-udV4_YHAwSzI4fxns_blTk1hjCd_DUpPy0KBhMhc1k63TX8dtoHJfQ8v_RfKPUos_lHOeM9nzf-UXP7jWiZmywZYo6A-YIMx7nGJbl-rwtNE_WXdwSeXFCbPd2Efp5qF9JauhW4yQ3Sa1Hv1')"></div>
+<!-- Map UI Overlays & Vector Route Simulation -->
+<div class="absolute inset-0 pointer-events-none">
+<!-- Simulated Lake Park Path & Gradient Filter -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/30"></div>
+<!-- Vector Curved SVG Walking Path -->
+<svg class="absolute inset-0 w-full h-full" fill="none" viewbox="0 0 390 230">
+<!-- Walking dotted trail -->
+<path d="M 68 152 Q 130 110 185 88 T 305 130" opacity="0.9" stroke="#E76F51" stroke-dasharray="4 4" stroke-linecap="round" stroke-width="3"></path>
+<path d="M 68 152 L 185 88" opacity="0.5" stroke="#33a395" stroke-dasharray="2 3" stroke-width="2"></path>
+</svg>
+<!-- Pin 0: Current Location (Blue Pulse) -->
+<div class="absolute top-[138px] left-[54px] flex items-center justify-center -translate-x-1/2 -translate-y-1/2">
+<div class="w-7 h-7 rounded-full bg-tertiary-container/30 flex items-center justify-center animate-ping"></div>
+<div class="absolute w-4 h-4 rounded-full bg-tertiary text-on-tertiary shadow-md flex items-center justify-center">
+<div class="w-1.5 h-1.5 rounded-full bg-surface-white"></div>
+</div>
+</div>
+<!-- Pin 1: Dinner Pin (Terracotta) -->
+<div class="absolute top-[80px] left-[185px] -translate-x-1/2 -translate-y-full flex flex-col items-center pointer-events-auto cursor-pointer group" onclick="highlightTimelineStep('step-dinner')">
+<div class="px-2 py-1 rounded-full bg-primary-container text-on-primary shadow-lg flex items-center gap-1 text-[11px] font-semibold tracking-tight transition-transform group-hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-[13px]">restaurant</span>
+<span>1. 비스트로 무드</span>
+</div>
+<div class="w-2 h-2 bg-primary-container rotate-45 -mt-1 shadow-sm"></div>
+</div>
+<!-- Pin 2: Cafe Pin (Warm Amber) -->
+<div class="absolute top-[125px] left-[305px] -translate-x-1/2 -translate-y-full flex flex-col items-center pointer-events-auto cursor-pointer group" onclick="highlightTimelineStep('step-cafe')">
+<div class="px-2 py-1 rounded-full bg-secondary-container text-on-secondary-container shadow-lg flex items-center gap-1 text-[11px] font-semibold tracking-tight transition-transform group-hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined text-[13px]">coffee</span>
+<span>2. 엠비언트</span>
+</div>
+<div class="w-2 h-2 bg-secondary-container rotate-45 -mt-1 shadow-sm"></div>
+</div>
+</div>
+<!-- Map Top Right Control -->
+<div class="absolute top-3 right-3 flex items-center gap-2">
+<button aria-label="지도 전체화면 확대" class="w-9 h-9 rounded-full bg-surface-white/95 text-on-surface shadow-md flex items-center justify-center backdrop-blur-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[19px]">open_in_full</span>
+</button>
+</div>
+<!-- Map Bottom Pill Badge: Real-time Kakao Sync -->
+<div class="absolute bottom-2.5 left-3 pointer-events-auto">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-white/95 text-on-surface backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-text-muted">실시간 Kakao 동기화</span>
+</div>
+</div>
+</section>
+<!-- Main Content Body -->
+<div class="px-gutter flex flex-col gap-5 pt-4">
+<!-- 2. Natural Language AI Prompt & Compact Mood Filter Card -->
+<section class="p-4 rounded-xl bg-surface-white shadow-sm flex flex-col gap-3">
+<div class="flex items-start justify-between gap-2">
+<div class="flex items-start gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-primary-container text-[18px]">temp_preferences_custom</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-sm text-label-sm text-text-muted">내 데이트 요청 프롬프트</span>
+<p class="font-body-md text-body-md font-medium text-on-surface line-clamp-2">
+              “아내와 청라에서 조용한 저녁 &amp; 감성 카페 데이트 (예산 7만원 안팎)”
+            </p>
+</div>
+</div>
+<button aria-label="AI 계획 다시 만들기" class="p-1.5 rounded-full bg-surface-container hover:bg-surface-variant text-on-surface-variant active:scale-90 transition-all shrink-0" id="btn-refresh-prompt" onclick="regenerateJourneyPlan()">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+</button>
+</div>
+<!-- Quick Context Chips (Horizontal Scroll) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 -mx-1 px-1 no-scrollbar">
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span>연인</span>
+<span>💕</span>
+</span>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-sm text-label-sm flex items-center gap-1">
+<span>식사+카페</span>
+<span>☕</span>
+</span>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span>조용한 곳</span>
+<span>🤫</span>
+</span>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm flex items-center gap-1">
+<span>분위기</span>
+<span>✨</span>
+</span>
+<span class="shrink-0 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+          7만원 안팎
+        </span>
+</div>
+</section>
+<!-- 3. AI Progressive Verification Status Badge -->
+<section class="flex items-center gap-2 px-3 py-2 rounded-lg bg-surface-container-low text-tertiary">
+<span class="material-symbols-outlined text-[18px] shrink-0 text-tertiary-container">verified</span>
+<span class="font-label-sm text-label-sm font-semibold truncate">
+        2인 데이트 조건 파악 완료 · Kakao API 실시간 반경 2km 매칭 완료
+      </span>
+</section>
+<!-- 4. Dining Plan Header & Bento Summary Grid -->
+<section class="flex flex-col gap-3">
+<div class="flex items-baseline justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-container font-semibold">Today's AI Journey</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface tracking-tight">청라 로맨틱 디너 &amp; 캔들라이트 카페</h2>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">AI 신뢰도 98%</span>
+</div>
+<!-- Bento Metrics (3 Columns) -->
+<div class="grid grid-cols-3 gap-2">
+<div class="p-3 rounded-xl bg-surface-white shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">schedule</span>총 소요
+          </span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">약 2.5h</span>
+<span class="font-label-sm text-label-sm text-text-muted">18:30 - 21:00</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-white shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">directions_walk</span>코스 이동
+          </span>
+<span class="font-headline-sm text-headline-sm text-on-surface mt-1">도보 4분</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium">280m 수변길</span>
+</div>
+<div class="p-3 rounded-xl bg-surface-white shadow-sm flex flex-col">
+<span class="font-label-sm text-label-sm text-text-muted flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">savings</span>예산 일치
+          </span>
+<span class="font-headline-sm text-headline-sm text-primary-container mt-1">96%</span>
+<span class="font-label-sm text-label-sm text-text-muted">약 6.8만원</span>
+</div>
+</div>
+</section>
+<!-- 5. Vertical Timeline Journey -->
+<section class="flex flex-col">
+<!-- Course 01: Dinner -->
+<article class="relative flex flex-col rounded-xl bg-surface-white shadow-sm p-4 transition-all duration-200" id="step-dinner">
+<!-- Top Metadata -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-primary-container text-on-primary flex items-center justify-center font-label-sm text-label-sm">
+              1
+            </div>
+<span class="font-label-sm text-label-sm font-semibold text-primary-container">1st Course · 디너</span>
+<span class="text-text-muted font-label-sm text-label-sm">18:30 - 19:50</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">★ 4.85</span>
+</div>
+<!-- Venue Name & Summary -->
+<div class="mt-2.5 flex justify-between items-start gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">청라 비스트로 무드</h3>
+<span class="font-body-md text-body-md text-text-muted">이탈리안 파스타 &amp; 립아이 스테이크 코스</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface-variant shrink-0">
+            현재서 650m
+          </span>
+</div>
+<!-- Place Image Thumbnail -->
+<div class="mt-3 w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A cozy, dim romantic Italian bistro in Cheongna Korea with warm terracotta tones, amber candlelight on rustic oak tables, wine glasses, and artisan pasta platters in evening soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfF9utm0ZnSAZZSDwm7B65gOsPTQb5HvkRtZucTPfQKkZYdvvw-ovogD70RPonGl5Hm-9yvNpfm9EXOIc4oR5sZubjImTG9XAdIlRVsA4porhRongEEGwXsOQgeO4_6ft6if-VyFrmP7xAvWuLHIIgaoQMlMURj_T3G-Tuy9aLBqwIbgKS1j6J_MdnBNwJvEKK-IOIUkB1dtcQGv3UI0Jgv3JxVuCMs4bi82xe3000ZrKUIktXu8kA"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-white font-label-sm text-label-sm">
+            2인 추천 파스타 세트 (4.9만)
+          </div>
+</div>
+<!-- AI Reason Bubble -->
+<div class="mt-3 p-3 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-primary-container text-[18px] shrink-0 mt-0.5">psychology</span>
+<p class="font-body-md text-body-md text-on-surface">
+            “조용하게 대화할 수 있는 프라이빗 부스와 7만원 예산에 최적화된 2인 세트 구성으로 선택했습니다.”
+          </p>
+</div>
+<!-- Action Button (Terracotta Full Width Mobile CTA) -->
+<div class="mt-3.5 flex gap-2">
+<a class="w-full h-11 rounded-lg bg-primary-container text-on-primary flex items-center justify-center gap-1.5 font-label-md text-label-md active:scale-98 transition-transform shadow-sm" href="#">
+<span>카카오맵 바로 연결</span>
+<span class="material-symbols-outlined text-[16px]">open_in_new</span>
+</a>
+</div>
+</article>
+<!-- Step Connector (Walking Path) -->
+<div class="relative py-3 px-6 flex items-center gap-3">
+<!-- Connecting Line -->
+<div class="flex flex-col items-center">
+<div class="w-0.5 h-8 bg-surface-container-highest"></div>
+</div>
+<!-- Transit Badge Card -->
+<div class="px-3 py-1.5 rounded-full bg-surface-container text-on-surface flex items-center gap-2 shadow-xs">
+<span class="material-symbols-outlined text-primary-container text-[16px]">directions_walk</span>
+<span class="font-label-sm text-label-sm font-semibold">도보 4분 (280m)</span>
+<span class="text-text-muted font-label-sm text-label-sm">· 호수공원 수변 산책길</span>
+</div>
+</div>
+<!-- Course 02: Cafe -->
+<article class="relative flex flex-col rounded-xl bg-surface-white shadow-sm p-4 transition-all duration-200" id="step-cafe">
+<!-- Top Metadata -->
+<div class="flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-sm text-label-sm">
+              2
+            </div>
+<span class="font-label-sm text-label-sm font-semibold text-secondary">2nd Course · 감성 카페</span>
+<span class="text-text-muted font-label-sm text-label-sm">20:00 - 21:00</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">★ 4.91</span>
+</div>
+<!-- Venue Name & Summary -->
+<div class="mt-2.5 flex justify-between items-start gap-2">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">카페 엠비언트</h3>
+<span class="font-body-md text-body-md text-text-muted">스페셜티 드립커피 &amp; 수제 바스크 치즈케이크</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-1 rounded bg-surface-container text-on-surface-variant shrink-0">
+            식당서 280m
+          </span>
+</div>
+<!-- Place Image Thumbnail -->
+<div class="mt-3 w-full h-32 rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Warm modern minimalist cafe interior at night with ambient diffused lamps, comfortable lounge chairs, steaming artisan hand-drip coffee ceramic cups and soft aesthetic wooden decor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5YTASErCjVrxH7JT3hptiwsusldhe5pAquMaoWpKZDAUq0jnGGTn5RI3JjYh9OEOnaNVti2mQ2AyRDvtrUkGSCbz-Ny-O8EGpVRTm36UUdyvEXZQFvkeWljEwSQ6zEY_DsPibuivDm0bdp1k5g1pHBJGDlJ7taNunIUx7WtnccOfQsTtSTg20BU3_MkLvfc2NCWMBQejlcIJp6A0RkRoNNaeC3v0bm6WPyXEDXKTqYQQ4HrHP2m7Q"/>
+<div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/60 backdrop-blur-sm text-white font-label-sm text-label-sm">
+            드립커피 2잔 + 디저트 (1.8만)
+          </div>
+</div>
+<!-- AI Reason Bubble -->
+<div class="mt-3 p-3 rounded-lg bg-surface-container-low flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">psychology</span>
+<p class="font-body-md text-body-md text-on-surface">
+            “차분한 앰비언트 조명과 시그니처 디카페인 필터 커피로 식사 후 오랜 시간 편안한 대화가 가능합니다.”
+          </p>
+</div>
+<!-- Action Row (Change Alternative & Kakao Map) -->
+<div class="mt-3.5 grid grid-cols-2 gap-2">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface flex items-center justify-center gap-1 font-label-md text-label-md active:scale-95 transition-transform" id="btn-swap-cafe" onclick="swapCafeOption()">
+<span class="material-symbols-outlined text-[16px]">sync</span>
+<span>다른 카페로 변경</span>
+</button>
+<a class="h-11 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface flex items-center justify-center gap-1 font-label-md text-label-md active:scale-95 transition-transform" href="#">
+<span>카카오맵 길찾기</span>
+<span class="material-symbols-outlined text-[16px]">navigation</span>
+</a>
+</div>
+</article>
+</section>
+<!-- 6. Radical Honesty & Fact Check Badge Section -->
+<section class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center gap-1.5 text-tertiary">
+<span class="material-symbols-outlined text-[18px]">check_circle</span>
+<span class="font-label-sm text-label-sm font-semibold">거리·도로명·영업상태 Kakao API 검증 완료</span>
+</div>
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[18px]">info</span>
+<span class="font-label-sm text-label-sm">실시간 주차 잔여 대수는 매장 확인 권장 (비스트로 무드 3대 가능)</span>
+</div>
+</section>
+<!-- Bottom Spacing helper for bottom-nav clearance -->
+<div class="h-2"></div>
+</div>
+</div>
+<script>
+  // Timeline highlight interaction from Map Markers
+  function highlightTimelineStep(stepId) {
+    const card = document.getElementById(stepId);
+    if (!card) return;
+    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    card.classList.add('bg-surface-container-low');
+    setTimeout(() => {
+      card.classList.remove('bg-surface-container-low');
+    }, 1200);
+  }
+
+  // Cafe swap micro-interaction
+  function swapCafeOption() {
+    const cafeCard = document.getElementById('step-cafe');
+    if (!cafeCard) return;
+    const title = cafeCard.querySelector('h3');
+    const desc = cafeCard.querySelector('.font-body-md.text-text-muted');
+    if (title && desc) {
+      if (title.innerText.includes('엠비언트')) {
+        title.innerText = '카페 릴랙스 청라호수점';
+        desc.innerText = '핸드메이드 밀크티 & 호수 뷰 테라스';
+      } else {
+        title.innerText = '카페 엠비언트';
+        desc.innerText = '스페셜티 드립커피 & 수제 바스크 치즈케이크';
+      }
+    }
+  }
+
+  // Regenerate plan micro-feedback
+  function regenerateJourneyPlan() {
+    const btn = document.getElementById('btn-refresh-prompt');
+    if (!btn) return;
+    btn.classList.add('rotate-180');
+    setTimeout(() => {
+      btn.classList.remove('rotate-180');
+    }, 500);
+  }
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-background-sand/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(31,26,23,0.05)]" data-active-classes="text-primary-container font-semibold"><div class="flex justify-around items-center h-16 px-gutter"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 transition-colors text-primary-container font-semibold" data-path="planner-home" href="#"><span class="material-symbols-outlined text-[22px]">auto_awesome</span><span class="font-label-sm text-label-sm tracking-tight">플래너</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-text-muted hover:text-on-surface transition-colors" data-path="explore-map" href="#"><span class="material-symbols-outlined text-[22px]">map</span><span class="font-label-sm text-label-sm tracking-tight">지도 보기</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-text-muted hover:text-on-surface transition-colors" data-path="saved-plans" href="#"><span class="material-symbols-outlined text-[22px]">collections_bookmark</span><span class="font-label-sm text-label-sm tracking-tight">저장된 플랜</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[44px] gap-0.5 text-text-muted hover:text-on-surface transition-colors" data-path="my-profile" href="#"><span class="material-symbols-outlined text-[22px]">account_circle</span><span class="font-label-sm text-label-sm tracking-tight">내 정보</span></a></div></nav></body></html>
