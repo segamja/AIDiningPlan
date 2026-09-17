@@ -8,18 +8,37 @@ type Stage = {
   place: string
   distance: string
   tag: string
+  reason?: string
   lat?: number
   lng?: number
   placeUrl?: string
+  placeId?: string
 }
+
+type Candidate = {
+  placeId: string
+  place: string
+  tag: string
+  distance: string
+  lat: number
+  lng: number
+  placeUrl?: string
+}
+
+type Location = { lat: number; lng: number; label: string }
 
 type DiningPlan = {
   title: string
   score: number
   totalTime: string
   walk: string
+  location?: Location
   stages: Stage[]
+  restaurantCandidates?: Candidate[]
+  cafeCandidates?: Candidate[]
 }
+
+type LocationStatus = 'idle' | 'loading' | 'granted' | 'denied' | 'unsupported'
 
 const APP_VERSION = '1.0.0'
 const VERSION_STORAGE_KEY = 'ai-dining-plan-version'
@@ -35,9 +54,18 @@ const defaultPlan: DiningPlan = {
   score: 94,
   totalTime: '약 2.5시간',
   walk: '도보 4분',
+  location: { lat: CHEONGNA_CENTER.lat, lng: CHEONGNA_CENTER.lng, label: '청라호수공원' },
   stages: [
-    { name: '식당', rating: 4.85, time: '18:30 - 21:00', place: '청라 비스트로 무드', distance: '650m', tag: '한식', lat: 37.5334, lng: 126.6362 },
-    { name: '카페', rating: 4.91, time: '21:00 - 22:00', place: '카페 엠비엔트', distance: '280m', tag: '브런치카페', lat: 37.5342, lng: 126.6318 }
+    { name: '식당', rating: 4.85, time: '18:30 - 21:00', place: '청라 비스트로 무드', distance: '650m', tag: '한식', reason: '분위기와 접근성을 함께 만족하는 기본 추천 코스입니다.', lat: 37.5334, lng: 126.6362, placeId: 'demo-restaurant-1' },
+    { name: '카페', rating: 4.91, time: '21:00 - 22:00', place: '카페 엠비엔트', distance: '280m', tag: '브런치카페', reason: '식사 후 걸어서 이동하기 좋은 거리의 카페입니다.', lat: 37.5342, lng: 126.6318, placeId: 'demo-cafe-1' }
+  ],
+  restaurantCandidates: [
+    { placeId: 'demo-restaurant-1', place: '청라 비스트로 무드', tag: '한식', distance: '650m', lat: 37.5334, lng: 126.6362 },
+    { placeId: 'demo-restaurant-2', place: '청라 야간 바 테라스', tag: '퓨전 한식', distance: '720m', lat: 37.5310, lng: 126.6300 }
+  ],
+  cafeCandidates: [
+    { placeId: 'demo-cafe-1', place: '카페 엠비엔트', tag: '브런치카페', distance: '280m', lat: 37.5342, lng: 126.6318 },
+    { placeId: 'demo-cafe-2', place: '청라 다크브루', tag: '카페', distance: '410m', lat: 37.5300, lng: 126.6355 }
   ]
 }
 
@@ -53,6 +81,8 @@ function App() {
   const [versionUpdateMessage, setVersionUpdateMessage] = React.useState('')
   const [radiusKm, setRadiusKm] = React.useState(2)
   const [mapError, setMapError] = React.useState('')
+  const [userLocation, setUserLocation] = React.useState<{ lat: number; lng: number } | null>(null)
+  const [locationStatus, setLocationStatus] = React.useState<LocationStatus>('idle')
 
   const mapContainerRef = React.useRef<HTMLDivElement>(null)
   const mapRef = React.useRef<any>(null)
@@ -141,6 +171,14 @@ function App() {
       overlaysRef.current.push(overlay)
     })
 
+    if (plan.location) {
+      const center = new kakao.maps.LatLng(plan.location.lat, plan.location.lng)
+      map.setCenter(center)
+      if (circleRef.current) {
+        circleRef.current.setPosition(center)
+      }
+    }
+
     if (hasValidStage) {
       map.setBounds(bounds, 90, 90, 90, 90)
     }
@@ -155,8 +193,51 @@ function App() {
 
   const openInKakaoMap = () => {
     const target = plan.stages[0]
-    const url = target?.placeUrl || `https://map.kakao.com/link/search/${encodeURIComponent(target?.place || '청라호수공원')}`
+    const url = target?.placeUrl || `https://map.kakao.com/link/search/${encodeURIComponent(target?.place || plan.location?.label || '청라호수공원')}`
     window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
+  const requestUserLocation = React.useCallback(() => {
+    if (!navigator.geolocation) {
+      setLocationStatus('unsupported')
+      return
+    }
+
+    setLocationStatus('loading')
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({ lat: position.coords.latitude, lng: position.coords.longitude })
+        setLocationStatus('granted')
+      },
+      () => setLocationStatus('denied'),
+      { enableHighAccuracy: true, timeout: 8000 }
+    )
+  }, [])
+
+  React.useEffect(() => {
+    requestUserLocation()
+  }, [requestUserLocation])
+
+  const selectCandidate = (stageIndex: number, candidate: Candidate) => {
+    setPlan((current) => {
+      const stages = [...current.stages]
+      const previous = stages[stageIndex]
+      if (!previous) return current
+
+      stages[stageIndex] = {
+        ...previous,
+        place: candidate.place,
+        tag: candidate.tag,
+        distance: candidate.distance,
+        lat: candidate.lat,
+        lng: candidate.lng,
+        placeUrl: candidate.placeUrl,
+        placeId: candidate.placeId,
+        reason: '직접 선택한 장소입니다.'
+      }
+
+      return { ...current, stages }
+    })
   }
 
   React.useEffect(() => {
@@ -219,7 +300,8 @@ function App() {
           people,
           intent,
           conditions,
-          budget
+          budget,
+          userLocation
         })
       })
 
@@ -252,6 +334,7 @@ function App() {
             place: intent.includes('술') ? '청라 야간 바 테라스' : '청라 비스트로 무드',
             distance: '650m',
             tag: intent.includes('카페') ? '퓨전 한식' : '한식',
+            reason: '네트워크 오류로 기본 추천을 보여드리고 있어요.',
             lat: intent.includes('술') ? 37.5310 : 37.5334,
             lng: intent.includes('술') ? 126.6300 : 126.6362
           },
@@ -262,6 +345,7 @@ function App() {
             place: conditions.includes('조용한 곳') ? '카페 엠비엔트' : '청라 다크브루',
             distance: '280m',
             tag: '브런치카페',
+            reason: '네트워크 오류로 기본 추천을 보여드리고 있어요.',
             lat: conditions.includes('조용한 곳') ? 37.5342 : 37.5300,
             lng: conditions.includes('조용한 곳') ? 126.6318 : 126.6355
           }
@@ -277,7 +361,7 @@ function App() {
       <header className="topbar">
         <div className="brand">
           <div className="brand-mark">✦</div>
-          <span>청라호수공원</span>
+          <span>{plan.location?.label ?? '청라호수공원'}</span>
         </div>
         <div className="topbar-icons">
           <span className="version-pill">v{currentVersion}</span>
@@ -376,14 +460,23 @@ function App() {
           </div>
 
           <div className="location-strip">
-            <span>📍 현재 위치 사용</span>
-            <button className="small-link">수정</button>
+            <span>
+              📍{' '}
+              {locationStatus === 'granted' && '현재 위치 사용 중'}
+              {locationStatus === 'loading' && '위치 확인 중...'}
+              {locationStatus === 'denied' && '위치 권한이 거부됨'}
+              {locationStatus === 'unsupported' && '위치 정보 미지원 브라우저'}
+              {locationStatus === 'idle' && '현재 위치 미사용'}
+            </span>
+            <button className="small-link" onClick={requestUserLocation}>
+              {locationStatus === 'granted' ? '새로고침' : '허용'}
+            </button>
           </div>
         </aside>
 
         <section className="map-panel">
           <div className="map-toolbar">
-            <div className="map-location"><span className="pin">◎</span> 청라호수공원</div>
+            <div className="map-location"><span className="pin">◎</span> {plan.location?.label ?? '청라호수공원'}</div>
             <div className="map-actions">
               <button className="toolbar-button" onClick={cycleRadius}>반경 {radiusKm}km</button>
               <button className="toolbar-button accent" onClick={handleGenerate} disabled={isLoading}>AI 추천</button>
@@ -422,24 +515,42 @@ function App() {
             </div>
 
             <div className="plan-list">
-              {plan.stages.map((stage, index) => (
-                <div className="plan-item" key={`${stage.name}-${index}`}>
-                  <div className="plan-index">{index + 1}</div>
-                  <div className="plan-main">
-                    <div className="plan-topline">
-                      <span className="plan-name">{stage.name}</span>
-                      <span className="plan-time">{stage.time}</span>
-                    </div>
-                    <div className="plan-content">
-                      <div>
-                        <h3>{stage.place}</h3>
-                        <p>{stage.tag} · {stage.distance}</p>
+              {plan.stages.map((stage, index) => {
+                const candidates = index === 0 ? plan.restaurantCandidates : plan.cafeCandidates
+
+                return (
+                  <div className="plan-item" key={`${stage.name}-${index}`}>
+                    <div className="plan-index">{index + 1}</div>
+                    <div className="plan-main">
+                      <div className="plan-topline">
+                        <span className="plan-name">{stage.name}</span>
+                        <span className="plan-time">{stage.time}</span>
                       </div>
-                      <div className="star">★ {stage.rating}</div>
+                      <div className="plan-content">
+                        <div>
+                          <h3>{stage.place}</h3>
+                          <p>{stage.tag} · {stage.distance}</p>
+                        </div>
+                        <div className="star">★ {stage.rating}</div>
+                      </div>
+                      {stage.reason && <p className="plan-reason">💬 {stage.reason}</p>}
+                      {candidates && candidates.length > 1 && (
+                        <div className="candidate-row">
+                          {candidates.map((candidate) => (
+                            <button
+                              key={candidate.placeId}
+                              className={`candidate-chip ${candidate.placeId === stage.placeId ? 'active' : ''}`}
+                              onClick={() => selectCandidate(index, candidate)}
+                            >
+                              {candidate.place}
+                            </button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
 
             <div className="detail-actions">

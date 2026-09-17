@@ -507,6 +507,39 @@ textarea {
   color: var(--muted);
 }
 
+.plan-reason {
+  margin: 10px 0 0;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--panel-soft);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.candidate-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.candidate-chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.candidate-chip.active {
+  background: rgba(231, 111, 81, 0.14);
+  border-color: rgba(231, 111, 81, 0.5);
+  color: var(--accent-dark);
+}
+
 .star {
   font-weight: 700;
   color: #d99a2b;

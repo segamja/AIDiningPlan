@@ -2,7 +2,7 @@ import express from 'express'
 import cors from 'cors'
 import dotenv from 'dotenv'
 import { readFileSync } from 'node:fs'
-import { buildDemoPlan, fetchKakaoPlaces, fetchOpenAIRecommendation } from '../lib/recommendEngine.js'
+import { buildDemoPlan, fetchKakaoPlaces, fetchOpenAIRecommendation, resolveLocation } from '../lib/recommendEngine.js'
 
 dotenv.config()
 
@@ -31,11 +31,13 @@ app.get('/api/health', (_req, res) => {
 app.post('/api/recommend', async (req, res) => {
   try {
     const payload = req.body || {}
-    const places = await fetchKakaoPlaces()
+    const location = await resolveLocation(payload.prompt, payload.userLocation)
+    const places = await fetchKakaoPlaces(location)
 
     const result = await fetchOpenAIRecommendation({
       ...payload,
-      placeCandidates: places
+      placeCandidates: places,
+      location
     })
 
     res.json(result)
