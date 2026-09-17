@@ -13,6 +13,8 @@ type Stage = {
   lng?: number
   placeUrl?: string
   placeId?: string
+  address?: string
+  phone?: string
 }
 
 type Candidate = {
@@ -23,6 +25,8 @@ type Candidate = {
   lat: number
   lng: number
   placeUrl?: string
+  address?: string
+  phone?: string
 }
 
 type Location = { lat: number; lng: number; label: string }
@@ -83,6 +87,8 @@ function App() {
   const [mapError, setMapError] = React.useState('')
   const [userLocation, setUserLocation] = React.useState<{ lat: number; lng: number } | null>(null)
   const [locationStatus, setLocationStatus] = React.useState<LocationStatus>('idle')
+  const [showDetail, setShowDetail] = React.useState(false)
+  const [toast, setToast] = React.useState('')
 
   const mapContainerRef = React.useRef<HTMLDivElement>(null)
   const mapRef = React.useRef<any>(null)
@@ -191,6 +197,11 @@ function App() {
     })
   }
 
+  const showToast = (message: string) => {
+    setToast(message)
+    window.setTimeout(() => setToast(''), 2200)
+  }
+
   const openInKakaoMap = () => {
     const target = plan.stages[0]
     const url = target?.placeUrl || `https://map.kakao.com/link/search/${encodeURIComponent(target?.place || plan.location?.label || '청라호수공원')}`
@@ -233,6 +244,8 @@ function App() {
         lng: candidate.lng,
         placeUrl: candidate.placeUrl,
         placeId: candidate.placeId,
+        address: candidate.address,
+        phone: candidate.phone,
         reason: '직접 선택한 장소입니다.'
       }
 
@@ -365,8 +378,8 @@ function App() {
         </div>
         <div className="topbar-icons">
           <span className="version-pill">v{currentVersion}</span>
-          <button className="icon-button">🔔</button>
-          <button className="icon-button user">👤</button>
+          <button className="icon-button" onClick={() => showToast('알림 기능은 준비 중이에요.')}>🔔</button>
+          <button className="icon-button user" onClick={() => showToast('마이페이지는 준비 중이에요.')}>👤</button>
         </div>
       </header>
 
@@ -554,12 +567,69 @@ function App() {
             </div>
 
             <div className="detail-actions">
-              <button className="ghost-btn">상세 보기</button>
+              <button className="ghost-btn" onClick={() => setShowDetail(true)}>상세 보기</button>
               <button className="primary-btn small" onClick={openInKakaoMap}>카카오맵 열기</button>
             </div>
           </div>
         </section>
       </main>
+
+      {showDetail && (
+        <div className="modal-backdrop" onClick={() => setShowDetail(false)}>
+          <div className="modal-panel" onClick={(event) => event.stopPropagation()}>
+            <div className="modal-header">
+              <h2>{plan.title}</h2>
+              <button className="icon-button" onClick={() => setShowDetail(false)}>✕</button>
+            </div>
+
+            {plan.stages.map((stage, index) => (
+              <div className="modal-stage" key={`${stage.name}-detail-${index}`}>
+                <div className="modal-stage-head">
+                  <span className="plan-index">{index + 1}</span>
+                  <div>
+                    <span className="plan-name">{stage.name}</span>
+                    <h3>{stage.place}</h3>
+                  </div>
+                </div>
+                <dl className="modal-fact-list">
+                  <div>
+                    <dt>카테고리</dt>
+                    <dd>{stage.tag || '정보 없음'}</dd>
+                  </div>
+                  <div>
+                    <dt>거리</dt>
+                    <dd>{stage.distance || '정보 없음'}</dd>
+                  </div>
+                  <div>
+                    <dt>운영 시간대</dt>
+                    <dd>{stage.time}</dd>
+                  </div>
+                  {stage.address && (
+                    <div>
+                      <dt>주소</dt>
+                      <dd>{stage.address}</dd>
+                    </div>
+                  )}
+                  {stage.phone && (
+                    <div>
+                      <dt>전화</dt>
+                      <dd>{stage.phone}</dd>
+                    </div>
+                  )}
+                </dl>
+                {stage.reason && <p className="plan-reason">💬 {stage.reason}</p>}
+                {stage.placeUrl && (
+                  <a className="small-link" href={stage.placeUrl} target="_blank" rel="noopener noreferrer">
+                    카카오맵에서 보기 ↗
+                  </a>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {toast && <div className="toast">{toast}</div>}
     </div>
   )
 }
