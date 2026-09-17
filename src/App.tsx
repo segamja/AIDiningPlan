@@ -1,26 +1,43 @@
 import React from 'react'
+import { CHEONGNA_CENTER, loadKakaoMaps } from './kakaoMaps'
 
-type Chip = {
-  label: string
-  active?: boolean
+type Stage = {
+  name: string
+  rating: number
+  time: string
+  place: string
+  distance: string
+  tag: string
+  lat?: number
+  lng?: number
+  placeUrl?: string
+}
+
+type DiningPlan = {
+  title: string
+  score: number
+  totalTime: string
+  walk: string
+  stages: Stage[]
 }
 
 const APP_VERSION = '1.0.0'
 const VERSION_STORAGE_KEY = 'ai-dining-plan-version'
+const RADIUS_STEPS_KM = [1, 2, 3]
 
 const initialPeople = ['혼자', '연인', '친구', '가족']
 const initialIntent = ['식사', '카페', '술', '산책']
 const initialConditions = ['가까운 곳', '가성비', '주차', '조용한 곳']
 const initialBudgets = ['4만원 이내', '7만원 이내', '10만원 이상']
 
-const defaultPlan = {
+const defaultPlan: DiningPlan = {
   title: '청라 로맨틱 디너 & 캔들라이트 카페 데이트',
   score: 94,
   totalTime: '약 2.5시간',
   walk: '도보 4분',
   stages: [
-    { name: '식당', rating: 4.85, time: '18:30 - 21:00', place: '청라 비스트로 무드', distance: '650m', tag: '한식' },
-    { name: '카페', rating: 4.91, time: '21:00 - 22:00', place: '카페 엠비엔트', distance: '280m', tag: '브런치카페' }
+    { name: '식당', rating: 4.85, time: '18:30 - 21:00', place: '청라 비스트로 무드', distance: '650m', tag: '한식', lat: 37.5334, lng: 126.6362 },
+    { name: '카페', rating: 4.91, time: '21:00 - 22:00', place: '카페 엠비엔트', distance: '280m', tag: '브런치카페', lat: 37.5342, lng: 126.6318 }
   ]
 }
 
@@ -31,9 +48,116 @@ function App() {
   const [conditions, setConditions] = React.useState<string[]>(['가까운 곳', '조용한 곳'])
   const [budget, setBudget] = React.useState<string>('7만원 이내')
   const [isLoading, setIsLoading] = React.useState(false)
-  const [plan, setPlan] = React.useState(defaultPlan)
+  const [plan, setPlan] = React.useState<DiningPlan>(defaultPlan)
   const [currentVersion, setCurrentVersion] = React.useState(APP_VERSION)
   const [versionUpdateMessage, setVersionUpdateMessage] = React.useState('')
+  const [radiusKm, setRadiusKm] = React.useState(2)
+  const [mapError, setMapError] = React.useState('')
+
+  const mapContainerRef = React.useRef<HTMLDivElement>(null)
+  const mapRef = React.useRef<any>(null)
+  const circleRef = React.useRef<any>(null)
+  const markersRef = React.useRef<any[]>([])
+  const overlaysRef = React.useRef<any[]>([])
+
+  React.useEffect(() => {
+    const appKey = import.meta.env.VITE_KAKAO_JAVASCRIPT_KEY
+
+    if (!appKey) {
+      setMapError('카카오맵 JavaScript 키가 설정되지 않았습니다.')
+      return
+    }
+
+    loadKakaoMaps(appKey)
+      .then((kakao) => {
+        if (!mapContainerRef.current) return
+
+        const center = new kakao.maps.LatLng(CHEONGNA_CENTER.lat, CHEONGNA_CENTER.lng)
+        const map = new kakao.maps.Map(mapContainerRef.current, { center, level: 5 })
+        mapRef.current = map
+
+        circleRef.current = new kakao.maps.Circle({
+          center,
+          radius: radiusKm * 1000,
+          strokeWeight: 2,
+          strokeColor: '#e76f51',
+          strokeOpacity: 0.6,
+          strokeStyle: 'shortdash',
+          fillColor: '#e76f51',
+          fillOpacity: 0.08
+        })
+        circleRef.current.setMap(map)
+      })
+      .catch((error: Error) => setMapError(error.message))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  React.useEffect(() => {
+    if (circleRef.current) {
+      circleRef.current.setRadius(radiusKm * 1000)
+    }
+  }, [radiusKm])
+
+  React.useEffect(() => {
+    const kakao = window.kakao
+    const map = mapRef.current
+    if (!kakao?.maps || !map) return
+
+    markersRef.current.forEach((marker) => marker.setMap(null))
+    overlaysRef.current.forEach((overlay) => overlay.setMap(null))
+    markersRef.current = []
+    overlaysRef.current = []
+
+    const bounds = new kakao.maps.LatLngBounds()
+    let hasValidStage = false
+
+    plan.stages.forEach((stage, index) => {
+      if (typeof stage.lat !== 'number' || typeof stage.lng !== 'number') return
+      hasValidStage = true
+
+      const position = new kakao.maps.LatLng(stage.lat, stage.lng)
+      bounds.extend(position)
+
+      const marker = new kakao.maps.Marker({ position, map })
+      markersRef.current.push(marker)
+
+      const content = document.createElement('div')
+      content.className = 'marker-card-overlay'
+      content.innerHTML = `
+        <span class="marker-pin">${index + 1}</span>
+        <div class="marker-card">
+          <strong>${stage.place}</strong>
+          <small>${stage.tag} · ${stage.distance}</small>
+        </div>
+      `
+
+      const overlay = new kakao.maps.CustomOverlay({
+        position,
+        content,
+        yAnchor: 1.3,
+        xAnchor: 0.12
+      })
+      overlay.setMap(map)
+      overlaysRef.current.push(overlay)
+    })
+
+    if (hasValidStage) {
+      map.setBounds(bounds, 90, 90, 90, 90)
+    }
+  }, [plan])
+
+  const cycleRadius = () => {
+    setRadiusKm((current) => {
+      const currentIndex = RADIUS_STEPS_KM.indexOf(current)
+      return RADIUS_STEPS_KM[(currentIndex + 1) % RADIUS_STEPS_KM.length]
+    })
+  }
+
+  const openInKakaoMap = () => {
+    const target = plan.stages[0]
+    const url = target?.placeUrl || `https://map.kakao.com/link/search/${encodeURIComponent(target?.place || '청라호수공원')}`
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
 
   React.useEffect(() => {
     const syncVersion = async () => {
@@ -103,7 +227,7 @@ function App() {
         throw new Error('추천 요청이 실패했습니다.')
       }
 
-      const data = await response.json()
+      const data: DiningPlan = await response.json()
       if (!data?.title || !Array.isArray(data?.stages) || data.stages.length === 0) {
         throw new Error('추천 데이터가 올바르지 않습니다.')
       }
@@ -127,7 +251,9 @@ function App() {
             time: '18:30 - 21:00',
             place: intent.includes('술') ? '청라 야간 바 테라스' : '청라 비스트로 무드',
             distance: '650m',
-            tag: intent.includes('카페') ? '퓨전 한식' : '한식'
+            tag: intent.includes('카페') ? '퓨전 한식' : '한식',
+            lat: intent.includes('술') ? 37.5310 : 37.5334,
+            lng: intent.includes('술') ? 126.6300 : 126.6362
           },
           {
             name: '카페',
@@ -135,7 +261,9 @@ function App() {
             time: '21:00 - 22:00',
             place: conditions.includes('조용한 곳') ? '카페 엠비엔트' : '청라 다크브루',
             distance: '280m',
-            tag: '브런치카페'
+            tag: '브런치카페',
+            lat: conditions.includes('조용한 곳') ? 37.5342 : 37.5300,
+            lng: conditions.includes('조용한 곳') ? 126.6318 : 126.6355
           }
         ]
       })
@@ -257,31 +385,17 @@ function App() {
           <div className="map-toolbar">
             <div className="map-location"><span className="pin">◎</span> 청라호수공원</div>
             <div className="map-actions">
-              <button className="toolbar-button">반경 2km</button>
-              <button className="toolbar-button accent">AI 추천</button>
+              <button className="toolbar-button" onClick={cycleRadius}>반경 {radiusKm}km</button>
+              <button className="toolbar-button accent" onClick={handleGenerate} disabled={isLoading}>AI 추천</button>
             </div>
           </div>
 
-          <div className="map-surface">
-            <div className="water-shape" />
-            <div className="path-line path-one" />
-            <div className="path-line path-two" />
-
-            <div className="marker restaurant">
-              <span className="marker-pin">1</span>
-              <div className="marker-card">
-                <strong>{plan.stages[0].place}</strong>
-                <small>{plan.stages[0].tag} · {plan.stages[0].distance}</small>
+          <div className="map-surface" ref={mapContainerRef}>
+            {mapError && (
+              <div className="map-error">
+                <p>{mapError}</p>
               </div>
-            </div>
-
-            <div className="marker cafe">
-              <span className="marker-pin">2</span>
-              <div className="marker-card">
-                <strong>{plan.stages[1].place}</strong>
-                <small>{plan.stages[1].tag} · {plan.stages[1].distance}</small>
-              </div>
-            </div>
+            )}
           </div>
 
           <div className="result-panel">
@@ -330,7 +444,7 @@ function App() {
 
             <div className="detail-actions">
               <button className="ghost-btn">상세 보기</button>
-              <button className="primary-btn small">카카오맵 열기</button>
+              <button className="primary-btn small" onClick={openInKakaoMap}>카카오맵 열기</button>
             </div>
           </div>
         </section>
